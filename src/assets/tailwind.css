@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Sans+TC&family=Roboto&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply leading-normal;
+    @apply text-black-100;
+    @apply bg-white;
+    font-family: Marcellus, 'Noto Sans TC', sans-serif;
+  }
+}
+@layer utilities {
+  .vertical-lr {
+    writing-mode: vertical-lr;
+  }
+}
