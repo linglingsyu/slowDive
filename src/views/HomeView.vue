@@ -35,7 +35,22 @@
 
     <div class="container">
       <div
-        class="relative bg-yellow-50 rounded-tr-[100px] min-h-[300px] -translate-y-1/2 after:block after:bg-black after:absolute after:left-0 after:top-0 after:right-0 after:bottom-0 after:-translate-x-1/2 after:-z-10"
+        class="relative bg-yellow-50 rounded-tr-[100px] min-h-[300px] -translate-y-1/2 after:block after:bg-red-200 after:absolute after:left-0 after:top-0 after:right-0 after:bottom-0 after:-translate-x-1/2 after:-z-10"
+      >
+        <h2>News</h2>
+        <ul class="pr-[110px]">
+          <li class="flex items-center font-Roboto">
+            <div class="basis-2/12">2023.01.01</div>
+            <div class="basis-8/12">菲律賓宿霧薄荷島潛水考證行程開始嘍</div>
+            <div class="basis-2/12 text-center">-></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- <div class="max-w-[1608px]">
+      <div
+        class="relative flex justify-end bg-yellow-50 rounded-tr-[100px] min-h-[300px]"
       >
         <h2>News</h2>
         <ul>
@@ -46,6 +61,6 @@
           </li>
         </ul>
       </div>
-    </div>
+    </div> -->
   </main>
 </template>

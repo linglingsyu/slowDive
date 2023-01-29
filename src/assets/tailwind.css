@@ -8,7 +8,7 @@
   body {
     @apply leading-normal;
     @apply text-black-100;
-    @apply bg-white;
+    @apply bg-[#F5F5F5];
     font-family: Marcellus, 'Noto Sans TC', sans-serif;
   }
 }
