@@ -10,6 +10,7 @@
     @apply text-black-100;
     @apply bg-[#F5F5F5];
     font-family: Marcellus, 'Noto Sans TC', sans-serif;
+    line-height: 1.2;
   }
 }
 @layer utilities {

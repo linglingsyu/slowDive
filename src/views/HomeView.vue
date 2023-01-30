@@ -1,7 +1,3 @@
-<script>
-// import TheWelcome from '@/components/TheWelcome.vue'
-</script>
-
 <template>
   <main>
     <div class="h-[1520px] relative">
@@ -33,16 +29,29 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container mb-[120px]">
       <div
-        class="relative bg-yellow-50 rounded-tr-[100px] min-h-[300px] -translate-y-1/2 after:block after:bg-red-200 after:absolute after:left-0 after:top-0 after:right-0 after:bottom-0 after:-translate-x-1/2 after:-z-10"
+        class="relative py-10 bg-white rounded-tr-[100px] min-h-[300px] -translate-y-1/2 after:block after:bg-white after:absolute after:left-0 after:top-0 after:right-0 after:bottom-0 after:-translate-x-1/2 after:-z-10"
       >
-        <h2>News</h2>
+        <h2 class="text-4xl text-blue-40">News</h2>
         <ul class="pr-[110px]">
-          <li class="flex items-center font-Roboto">
-            <div class="basis-2/12">2023.01.01</div>
-            <div class="basis-8/12">菲律賓宿霧薄荷島潛水考證行程開始嘍</div>
-            <div class="basis-2/12 text-center">-></div>
+          <li
+            class="font-Roboto border-b border-b-black-40"
+            v-for="item in 3"
+            :key="item"
+          >
+            <a href="#" class="flex items-center h-full py-10">
+              <div class="w-[196px] text-lg text-black-60">2023.01.01</div>
+              <div class="flex-grow text-xl text-black">
+                菲律賓宿霧薄荷島潛水考證行程開始嘍
+              </div>
+              <div class="w-15 text-center">
+                <ArrowIcon></ArrowIcon>
+              </div>
+            </a>
+          </li>
+          <li class="font-Roboto">
+            <a href="#" class="block text-center pt-10">more</a>
           </li>
         </ul>
       </div>
@@ -64,3 +73,12 @@
     </div> -->
   </main>
 </template>
+
+<script>
+import ArrowIcon from '@/components/icons/IconArrow.vue'
+export default {
+  components: {
+    ArrowIcon,
+  },
+}
+</script>
