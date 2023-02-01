@@ -22,6 +22,13 @@
       #202020 78.81%
     );
   }
+  .bg2 {
+    background: linear-gradient(
+      to bottom,
+      #ACE4EF 0%,
+      rgba(255, 255, 255,0) 100%
+    );
+  }
 }
 @layer utilities {
   .vertical-lr {

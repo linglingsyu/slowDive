@@ -45,6 +45,7 @@ module.exports = {
       },
       fontFamily: {
         Roboto: ['Roboto'],
+        noto: ['Noto Sans TC'],
       },
     },
   },

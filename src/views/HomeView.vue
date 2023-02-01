@@ -57,9 +57,11 @@
       </div>
     </section>
 
-    <section>
+    <section class="mb-[120px]">
       <div class="container">
-        <h2 class="flex items-center text-black-100 mb-20">
+        <h2
+          class="flex items-center text-black-100 mb-20 after:h-px after:bg-black-40 after:flex-grow"
+        >
           <span class="text-[80px]">Course</span
           ><span class="text-2xl border-x border-x-black-100 px-5 mx-5"
             >精選課程</span
@@ -67,7 +69,7 @@
         </h2>
       </div>
 
-      <div class="bg min-h-[1600px]">
+      <div class="bg">
         <div
           :class="[
             item % 2 === 0
@@ -77,13 +79,17 @@
           v-for="(item, index) in 3"
           :key="index"
         >
-          <!-- <h3
-          class="bg-clip-text text-transparent bg-gradient-to-b from-[#cef2fa] via-[#CEF2FA] to-white text-[150px] leading-[150px]"
-        >
-          Open water
-        </h3> -->
-
-          <h3 class="text-[#cef2fa] text-[150px] leading-[120px]">
+          <h3
+            class="text-[150px] leading-[.8] font-light"
+            :class="[
+              index !== 0
+                ? 'bg-clip-text text-transparent bg2'
+                : 'text-[#cef2fa]',
+              item % 2 === 0
+                ? '2xl:ml-[calc((100vw-1320px)/2)] xl:ml-[calc((100vw-1140px)/2)] lg:ml-[calc((100vw-960px)/2)]'
+                : '',
+            ]"
+          >
             Open water
           </h3>
           <div>
@@ -125,6 +131,75 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <section class="container mt-[120px] pb-20">
+      <h2
+        class="flex items-center text-black-100 mb-[120px] after:h-px after:bg-black-40 after:flex-grow"
+      >
+        <span class="text-[80px]">Explore</span
+        ><span class="text-2xl border-x border-x-black-100 px-5 mx-5"
+          >探索海洋</span
+        >
+      </h2>
+      <div class="flex flex-wrap -mx-3 gap-y-20">
+        <div class="basis-4/12 px-3" v-for="item in 7" :key="item">
+          <div>
+            <img
+              class="h-[380px] object-cover"
+              src="@/assets/images/play01.jpg"
+              alt="play01.jpg"
+            />
+            <div class="font-noto flex justify-between items-center mt-3 mb-5">
+              <span class="text-black-60">2023.01.01</span>
+              <span class="text-danger">還剩 3 個名額</span>
+            </div>
+            <a href="#">
+              <div class="flex justify-between items-center">
+                <h3 class="text-3xl">東北角一日放呆</h3>
+                <ArrowIcon
+                  class="w-[22px] h-[22px]"
+                  fillColor="#121212"
+                ></ArrowIcon>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a
+        href="#"
+        class="block text-center font-noto text-2xl py-10 text-blue-60"
+        ><span class="shadow-[0_1px_0_0_#62D5EE]">Read More</span></a
+      >
+    </section>
+    <section class="container pb-[120px]">
+      <h2
+        class="relative flex items-center text-black-100 mb-[120px] after:h-px after:bg-black-40 after:flex-grow"
+      >
+        <div class="text-[80px]">QA</div>
+        <div class="text-2xl border-x border-x-black-100 px-5 mx-5">
+          常見問題
+        </div>
+      </h2>
+
+      <ul>
+        <li class=" border-b border-black-40">
+          <label class="flex justify-between items-center py-10 cursor-pointer">
+            <input type="checkbox" class="" />
+            <h3 class="text-3xl">不會游泳可以潛水嗎？</h3>
+            <ArrowIcon class="w-[30px] h-[30px] rotate-90"></ArrowIcon>
+          </label>
+          <p class="py-10 text-lg leading-[34px]">
+            對水肺潛水來說，學員的游泳能力跟學習潛水的能力基本上是沒有直接關係的，水肺潛水是透過水肺裝備讓你能在水下呼吸氣瓶裡的空氣，所以你不需要擔心自己沒辦法換氣，唯一跟潛水有關聯的部分就是，對水的熟悉度。
+            對平時不常接觸水域活動的學員來說，是可以夠過較長的適應期來改善自己心理上的不適感
+          </p>
+        </li>
+      </ul>
+      <a
+        href="#"
+        class="block text-center font-noto text-2xl py-10 text-blue-60"
+        ><span class="shadow-[0_1px_0_0_#62D5EE]">Read More</span></a
+      >
     </section>
   </main>
 </template>
