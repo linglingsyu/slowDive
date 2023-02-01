@@ -1,15 +1,15 @@
 <template>
-  <button
-    type="button"
+  <a
+    :href="url"
     class="flex items-center text-blue-40 p-5 rounded-full shadow-btn"
   >
     <slot></slot>
-  </button>
+  </a>
 </template>
 
 <script>
 export default {
-  name: 'vueButton',
-  props: {},
+  name: 'linkButton',
+  props: ['url'],
 }
 </script>

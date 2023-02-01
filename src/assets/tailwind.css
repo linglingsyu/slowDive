@@ -13,6 +13,16 @@
     line-height: 1.2;
   }
 }
+@layer components {
+  .bg {
+    background: linear-gradient(
+      to bottom,
+      rgba(128, 221, 240, 0) 13.7%,
+      #1688a5 45.99%,
+      #202020 78.81%
+    );
+  }
+}
 @layer utilities {
   .vertical-lr {
     writing-mode: vertical-lr;
