@@ -14,6 +14,7 @@
     "db": "json-server db.json -m ./node_modules/json-server-auth"
   },
   "dependencies": {
+    "daisyui": "^2.51.3",
     "pinia": "^2.0.22",
     "vue": "^3.2.39",
     "vue-router": "^4.1.5"

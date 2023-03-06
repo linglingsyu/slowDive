@@ -4,14 +4,14 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '12px',
+      padding: '12px'
     },
     screens: {
       sm: '540px',
       md: '720px',
       lg: '960px',
       xl: '1140px',
-      '2xl': '1320px',
+      '2xl': '1320px'
     },
     fontSize: {
       sm: '0.8rem',
@@ -21,7 +21,7 @@ module.exports = {
       '2xl': '1.75rem',
       '3xl': '2rem',
       '4xl': '2.5rem',
-      '5xl': '3rem',
+      '5xl': '3rem'
     },
     extend: {
       colors: {
@@ -35,19 +35,19 @@ module.exports = {
         'blue-60': '#4BBDCC',
         'blue-40': '#62D5EE',
         'blue-20': '#DAF3F9',
-        danger: '#E4007B',
+        danger: '#E4007B'
       },
       spacing: {
-        15: '60px',
+        15: '60px'
       },
       boxShadow: {
-        btn: '0 0 30px rgba(87, 197, 221, 0.2)',
+        btn: '0 0 30px rgba(87, 197, 221, 0.2)'
       },
       fontFamily: {
         Roboto: ['Roboto'],
-        noto: ['Noto Sans TC'],
-      },
-    },
+        noto: ['Noto Sans TC']
+      }
+    }
   },
-  plugins: [],
+  plugins: [require('daisyui')]
 }
