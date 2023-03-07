@@ -21,13 +21,13 @@
 </template>
 
 <script>
-import LogoIcon from '@/components/icons/IconLogo.vue'
-import CartIcon from '@/components/icons/IconCart.vue'
+import LogoIcon from "@/components/icons/IconLogo.vue";
+import CartIcon from "@/components/icons/IconCart.vue";
 export default {
-  name: 'vueHeader',
+  name: "vueHeader",
   components: {
     CartIcon,
     LogoIcon,
   },
-}
+};
 </script>

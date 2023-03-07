@@ -10,13 +10,13 @@
 
 <script>
 // import HelloWorld from '@/components/HelloWorld.vue'
-import Header from '@/components/Header.vue'
+import Header from "@/components/Header.vue";
 // import Button from '@/components/Button.vue'
 export default {
   components: {
     Header,
     // Button,
   },
-}
+};
 </script>
 <style scoped></style>

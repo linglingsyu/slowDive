@@ -23,12 +23,12 @@ export default {
   props: {
     fillColor: {
       // default: '#62D5EE',
-      default: '#ffffff',
+      default: "#ffffff",
     },
     cartNum: {
       type: Number,
       default: 0,
     },
   },
-}
+};
 </script>

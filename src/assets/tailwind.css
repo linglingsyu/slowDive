@@ -15,18 +15,22 @@
 }
 @layer components {
   .bg {
-    background: linear-gradient(
+    /* background: linear-gradient(
       to bottom,
       rgba(128, 221, 240, 0) 13.7%,
       #1688a5 45.99%,
       #202020 78.81%
-    );
+    ); */
+    background: linear-gradient(to bottom, #ffffff, #78cdd1, #1e1e3c);
+
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4),
+      0 0 10px rgba(0, 0, 0, 0.1) inset; */
   }
   .bg2 {
     background: linear-gradient(
       to bottom,
-      #ACE4EF 0%,
-      rgba(255, 255, 255,0) 100%
+      #ace4ef 0%,
+      rgba(255, 255, 255, 0) 100%
     );
   }
 }

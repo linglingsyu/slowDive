@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'vueButton',
+  name: "vueButton",
   props: {},
-}
+};
 </script>

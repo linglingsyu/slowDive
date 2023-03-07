@@ -43,10 +43,10 @@
 export default {
   props: {
     fillColor: {
-      default: '#ffffff',
+      default: "#ffffff",
     },
   },
-}
+};
 </script>
 
 <style scoped>

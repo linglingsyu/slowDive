@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'linkButton',
-  props: ['url'],
-}
+  name: "linkButton",
+  props: ["url"],
+};
 </script>
