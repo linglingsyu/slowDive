@@ -1,5 +1,5 @@
 <template>
-  <header class="container mt-10">
+  <header class="container mt-10 z-50">
     <div class="flex justify-between">
       <ul class="flex items-center">
         <li class="mr-10">
@@ -21,13 +21,13 @@
 </template>
 
 <script>
-import LogoIcon from "@/components/icons/IconLogo.vue";
-import CartIcon from "@/components/icons/IconCart.vue";
+import LogoIcon from '@/components/icons/IconLogo.vue'
+import CartIcon from '@/components/icons/IconCart.vue'
 export default {
-  name: "vueHeader",
+  name: 'vueHeader',
   components: {
     CartIcon,
-    LogoIcon,
-  },
-};
+    LogoIcon
+  }
+}
 </script>

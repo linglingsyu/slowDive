@@ -1,62 +1,39 @@
 <template>
   <main>
-    <section class="h-screen relative">
-      <div class="banner">
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <div class="wave"></div>
-        <h2>Slow Diving</h2>
-        <div>
-          <p class="mb-4">用一次呼吸的時間</p>
-          <p class="indent-[2em]">愛上自由的大海</p>
+    <section class="h-screen relative overflow-hidden">
+      <div class="w-full h-1/2 relative">
+        <div
+          v-for="item in 3"
+          :key="item"
+          class="bg-[#38bbf8] w-[200vw] h-[210vw] opacity-40 absolute top-[-75vw] left-1/2 -ml-[100vw] -mt-[95vw] rounded-[43%] animate-[rotate_9000ms_linear_infinite] [&:nth-child(1)]:animate-[rotate_12000ms_linear_infinite] [&:nth-child(2)]:animate-[rotate_15000ms_linear_infinite] [&:nth-child(2)]:opacity-10 &nth-child(2):bg-[#a7a6a6]"
+        ></div>
+        <!-- <div class="wave"></div>
+        <div class="wave"></div> -->
+        <div
+          class="text-white text-[50px] absolute top-1/2 left-1/2 -translate-x-1/2"
+        >
+          <h1 class="tracking-widest">
+            <p
+              class="text-center mb-10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.1)] text-[3vw] tracking-[2px] uppercase"
+            >
+              Slow Diving
+            </p>
+            <p class="mb-4">用一次呼吸的時間</p>
+            <p class="indent-[2em]">愛上自由的大海</p>
+            <!--文字跳動 https://codepen.io/dev_loop/pen/NWxbVPE -->
+            <!-- https://tobiasahlin.com/moving-letters/ -->
+          </h1>
         </div>
       </div>
-      <!-- <video
-        class="absolute top-0 left-0 w-full h-full object-cover -z-10"
-        muted
-        autoplay
-        loop
-      >
-        <source
-          src="https://www.youtube.com/watch?v=z9QNDGwVTW4&ab_channel=kuuwankop"
-          type="video/mp4"
-        />
-        <p>Your browser cannot play the provided video file.</p>
-      </video> -->
-      <div class="text-white text-[50px] absolute top-1/3 left-1/3">
-        <h1 class="tracking-widest">
-          <p class="mb-4">用一次呼吸的時間</p>
-          <p class="indent-[2em]">愛上自由的大海</p>
-        </h1>
-      </div>
-      <!-- <div
-        class="vertical-lr flex justify-start items-center w-full h-full text-white text-[50px]"
-      >
-        <h1>
-          <div class="indent-[2em] p-5">
-            <span class="tracking-widest border-l border-l-white"
-              >愛上自由的大海</span
-            >
-          </div>
-          <div class="p-5">
-            <span class="tracking-widest border-l border-l-white"
-              >用一次呼吸的時間</span
-            >
-          </div>
-        </h1>
-      </div> -->
-    </section>
-
-    <div class="bg">
-      <section class="container -mb-[242px]">
+      <section class="container">
         <div
-          class="relative py-8 bg-white rounded-tr-[100px] min-h-[300px] -translate-y-[242px]"
+          class="absolute bottom-1/4 left-1/3 -translate-x-1/2 translate-y-1/2 p-6 w-1/2 bg-white rounded-lg rounded-tr-[100px]"
         >
           <h2 class="text-3xl text-blue-40">News</h2>
-          <ul class="pr-[110px]">
+          <ul class="">
             <li
-              class="font-Roboto border-b border-b-black-40"
-              v-for="item in 5"
+              class="font-Roboto border-b border-b-black-30"
+              v-for="item in 3"
               :key="item"
             >
               <a href="#" class="flex items-center h-full py-5">
@@ -69,13 +46,15 @@
                 </div>
               </a>
             </li>
-            <li class="font-Roboto">
+            <!-- <li class="font-Roboto">
               <a href="#" class="block text-center pt-10">more</a>
-            </li>
+            </li> -->
           </ul>
         </div>
       </section>
+    </section>
 
+    <div class="bg">
       <section class="mb-[120px]">
         <div class="container">
           <h2
@@ -95,8 +74,8 @@
                 ? '2xl:mr-[calc((100vw-1320px)/2)] xl:mr-[calc((100vw-1140px)/2)] lg:mr-[calc((100vw-960px)/2)]'
                 : '2xl:ml-[calc((100vw-1320px)/2)] xl:ml-[calc((100vw-1140px)/2)] lg:ml-[calc((100vw-960px)/2)]'
             ]"
-            v-for="(item, index) in 3"
-            :key="index"
+            v-for="(item, index) in course"
+            :key="item.title"
           >
             <h3
               class="text-[150px] leading-[.8] font-light"
@@ -109,7 +88,7 @@
                   : ''
               ]"
             >
-              Open water
+              {{ item.title }}
             </h3>
             <div>
               <img
@@ -117,8 +96,8 @@
                 :class="[
                   item % 2 === 0 ? 'rounded-tr-[100px]' : 'rounded-tl-[100px]'
                 ]"
-                src="@/assets/images/course01.jpg"
-                alt="course01.png"
+                :src="item.image"
+                alt="{{ item.image}}"
               />
               <div
                 class="w-9/12 bg-white py-10 px-[110px] -translate-y-1/2"
@@ -128,18 +107,19 @@
                     : 'rounded-tr-[50px]'
                 ]"
               >
-                <div class="text-lg text-danger mb-5">需有ow證照</div>
-                <div class="text-xl text-blue-40">通往探索水底世界的門票</div>
+                <div
+                  class="text-lg text-danger mb-5"
+                  v-if="item.required.length"
+                >
+                  {{ item.required }}
+                </div>
+                <div class="text-xl text-blue-40">{{ item.subtitle }}</div>
                 <div class="text-4xl font-Roboto my-5">
-                  PADI OW 初階開放水域潛水員課程
+                  {{ item.name }}
                 </div>
                 <div class="flex items-start justify-between">
                   <p class="w-[416px] text-lg text-black-60 leading-[34px]">
-                    <!-- 水肺潛水的入門課程，取得證照後，開始休閒潛水之旅
-                    ，在水中停留更長時間、去更多海域、看更精彩的海底世界！ -->
-                    在開闊的海域中盡情探索！參加我們的 open water
-                    課程，學習安全而有趣的潛水技巧。在專業教練的指導下，打造獨特的潛水體驗。
-                    <!-- 拓展您的潛水技能，挑戰更深更廣的海域！參加我們的 AOW 課程，學習專業的潛水知識和技巧。征服不同的潛水挑戰，體驗更豐富多樣的海底世界。 -->
+                    {{ item.desc }}
                   </p>
                   <linkButton url="#" class="justify-between w-[220px]">
                     <span>了解更多</span>
@@ -237,6 +217,36 @@ import CartIcon from '@/components/icons/IconCart.vue'
 import vButton from '@/components/Button.vue'
 import linkButton from '@/components/linkButton.vue'
 export default {
+  data() {
+    return {
+      course: [
+        {
+          title: 'Open Water',
+          desc: '在開闊的海域中盡情探索！參加我們的 open water課程，學習安全而有趣的潛水技巧。在專業教練的指導下，打造獨特的潛水體驗',
+          required: '',
+          subtitle: '通往探索水底世界的門票',
+          name: 'PADI OW 初階開放水域潛水員課程',
+          image: './src/assets/images/course01.jpg'
+        },
+        {
+          title: 'Advanced',
+          desc: '拓展您的潛水技能，挑戰更深更廣的海域！參加我們的 AOW 課程，學習專業的潛水知識和技巧。征服不同的潛水挑戰，體驗更豐富多樣的海底世界。',
+          required: '需有ow證照',
+          subtitle: '開啟水底世界的新大門',
+          name: 'PADI AOW 進階開放水域潛水員課程',
+          image: './src/assets/images/course02.jpg'
+        },
+        {
+          title: 'Enriched Air Diver',
+          desc: '用高氧空氣取代標準空氣，可延長免減壓極限，待在水底的時間更久。使用高氧空氣潛水在世界各地已是相當普遍的趨勢。',
+          required: '需有ow證照',
+          subtitle: '延長免減壓時間的秘密',
+          name: 'PADI AOW 進階開放水域潛水員課程',
+          image: './src/assets/images/course03.jpg'
+        }
+      ]
+    }
+  },
   components: {
     vButton,
     ArrowIcon,
@@ -251,38 +261,6 @@ export default {
   width: 100%;
   height: 300px;
   position: relative;
-  h2 {
-    position: absolute;
-    color: #fff;
-    top: 7vw;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0px 1px 2px rgba(black, 0.1);
-    font-size: 3vw;
-  }
-  .wave {
-    background-color: #38bbf8;
-    width: 200vw;
-    height: 200vw;
-    opacity: 0.4;
-    position: absolute;
-    top: -75vw;
-    left: 50%;
-    margin-left: -100vw;
-    margin-top: -95vw;
-    border-radius: 43%;
-    animation: rotate 9000ms infinite linear;
-    &:nth-child(1) {
-      animation: rotate 12000ms infinite linear;
-    }
-    &:nth-child(2) {
-      animation: rotate 15000ms infinite linear;
-      opacity: 0.1;
-      background-color: #a7a6a6;
-    }
-  }
 }
 
 @keyframes rotate {
