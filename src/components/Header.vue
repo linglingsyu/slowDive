@@ -1,5 +1,5 @@
 <template>
-  <header class="container mt-10 z-50">
+  <header class="container">
     <div class="flex justify-between">
       <ul class="flex items-center">
         <li class="mr-10">

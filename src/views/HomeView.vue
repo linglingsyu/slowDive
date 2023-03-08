@@ -5,7 +5,7 @@
         <div
           v-for="item in 3"
           :key="item"
-          class="bg-[#38bbf8] w-[200vw] h-[210vw] opacity-40 absolute top-[-75vw] left-1/2 -ml-[100vw] -mt-[95vw] rounded-[43%] animate-[rotate_9000ms_linear_infinite] [&:nth-child(1)]:animate-[rotate_12000ms_linear_infinite] [&:nth-child(2)]:animate-[rotate_15000ms_linear_infinite] [&:nth-child(2)]:opacity-10 &nth-child(2):bg-[#a7a6a6]"
+          class="bg-[#38bbf8] w-[200vw] h-[205vw] opacity-30 absolute top-[-75vw] left-1/2 -ml-[100vw] -mt-[95vw] rounded-[43%] animate-[rotate_9000ms_linear_infinite] [&:nth-child(1)]:animate-[rotate_12000ms_linear_infinite] [&:nth-child(2)]:animate-[rotate_15000ms_linear_infinite] [&:nth-child(2)]:opacity-10 &nth-child(2):bg-[#a7a6a6]"
         ></div>
         <!-- <div class="wave"></div>
         <div class="wave"></div> -->
@@ -13,11 +13,11 @@
           class="text-white text-[50px] absolute top-1/2 left-1/2 -translate-x-1/2"
         >
           <h1 class="tracking-widest">
-            <p
+            <!-- <p
               class="text-center mb-10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.1)] text-[3vw] tracking-[2px] uppercase"
             >
               Slow Diving
-            </p>
+            </p> -->
             <p class="mb-4">用一次呼吸的時間</p>
             <p class="indent-[2em]">愛上自由的大海</p>
             <!--文字跳動 https://codepen.io/dev_loop/pen/NWxbVPE -->
@@ -25,7 +25,19 @@
           </h1>
         </div>
       </div>
-      <section class="container">
+      <div class="text-center text-white absolute left-1/2 bottom-1/4">
+        <div
+          class="animate-[scrollText_1.2s_linear_infinite] text-sm -mb-4 tracking-widest"
+        >
+          scroll
+        </div>
+        <span
+          class="material-icons-outlined text-5xl animate-[scroll_1s_linear_infinite]"
+        >
+          expand_more
+        </span>
+      </div>
+      <section class="container hidden">
         <div
           class="absolute bottom-1/4 left-1/3 -translate-x-1/2 translate-y-1/2 p-6 w-1/2 bg-white rounded-lg rounded-tr-[100px]"
         >
@@ -244,7 +256,7 @@ export default {
           name: 'PADI AOW 進階開放水域潛水員課程',
           image: './src/assets/images/course03.jpg'
         }
-      ]
+      ],
     }
   },
   components: {
@@ -269,6 +281,28 @@ export default {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(20px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes scrollText {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.8;
   }
 }
 </style>
