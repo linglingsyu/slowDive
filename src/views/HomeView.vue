@@ -37,7 +37,7 @@
           expand_more
         </span>
       </div>
-      <section class="container hidden">
+      <section class="container ">
         <div
           class="absolute bottom-1/4 left-1/3 -translate-x-1/2 translate-y-1/2 p-6 w-1/2 bg-white rounded-lg rounded-tr-[100px]"
         >
@@ -68,7 +68,7 @@
 
     <div class="bg">
       <section class="pt-20">
-        <div class="container mb-20">
+        <div class="container">
           <h2
             class="flex items-center text-black-100 after:h-px after:bg-black-40 after:flex-grow"
           >
@@ -90,9 +90,7 @@
           <h3
             class="text-[100px] leading-[.8] font-light"
             :class="[
-              index === 0
-                ? 'bg-clip-text text-transparent bg2'
-                : 'text-[#cef2fa]',
+              index === 0 ? 'bg-clip-text text-transparent ' : 'text-[#cef2fa]',
               index % 2 !== 0
                 ? '2xl:ml-[calc((100vw-1320px)/2)] xl:ml-[calc((100vw-1140px)/2)] lg:ml-[calc((100vw-960px)/2)]'
                 : ''
@@ -100,10 +98,7 @@
           >
             {{ item.title }}
           </h3>
-          <div
-            class="relative -mt-[110px]"
-            :class="{ '-my-[110px]': index === course.length - 1 }"
-          >
+          <div class="relative">
             <img
               class="h-[70vh] w-full object-cover"
               :class="[
@@ -212,7 +207,7 @@
         ><span class="shadow-[0_1px_0_0_#62D5EE]">Read More</span></a
       >
     </section>
-    <section class="container pb-[120px] hidden">
+    <section class="container pb-[120px] ">
       <h2
         class="relative flex items-center text-black-100 mb-[120px] after:h-px after:bg-black-40 after:flex-grow"
       >
@@ -260,7 +255,7 @@ export default {
           required: '',
           subtitle: '通往探索水底世界的門票',
           name: 'PADI OW 初階開放水域潛水員課程',
-          image: './src/assets/images/course001.jpg'
+          image: './src/assets/images/course01.jpg'
         },
         {
           title: 'Advanced',
@@ -268,7 +263,7 @@ export default {
           required: '需有ow證照',
           subtitle: '開啟水底世界的新大門',
           name: 'PADI AOW 進階開放水域潛水員課程',
-          image: './src/assets/images/course02.jpg'
+          image: './src/assets/images/course001.jpg'
         },
         {
           title: 'Enriched Air Diver',
