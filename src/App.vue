@@ -1,7 +1,10 @@
 <template>
   <div
-    class="w-full py-2 fixed top-0 left-0 right-0 text-white z-50"
-    :class="{ hidden: !showNavbar, 'bg-[#51a3ad]': !isTop }"
+    class="w-full fixed top-0 left-0 right-0 text-white z-50 hidden"
+    :class="{
+      hidden: !showNavbar,
+      'bg-[#5ca4cf] shadow-xl shadow-[#cccccc]': !isTop
+    }"
   >
     <Header id="header" class=""></Header>
   </div>

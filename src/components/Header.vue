@@ -3,7 +3,9 @@
     <div class="flex justify-between">
       <ul class="flex items-center">
         <li class="mr-10">
-          <RouterLink to="/"><LogoIcon></LogoIcon></RouterLink>
+          <RouterLink to="/"
+            ><img class="w-11/12" src="@/assets/logo.png" alt="logo"
+          /></RouterLink>
         </li>
         <li class="mx-5"><RouterLink to="/">愛潛水</RouterLink></li>
         <li class="mx-5"><RouterLink to="/">學潛水</RouterLink></li>
@@ -14,20 +16,31 @@
         <li><RouterLink to="/">註冊</RouterLink></li>
         <li><RouterLink to="/">登入</RouterLink></li>
         <li><RouterLink to="/">註冊</RouterLink></li>
-        <li class="relative"><CartIcon></CartIcon></li>
+        <li class="relative">
+          <CartIcon></CartIcon>
+          <div
+            class="w-4 h-4 bg-white text-blue-40 text-[10px] font-['Roboto'] text-center absolute rounded-full right-0 top-0"
+          >
+            {{ cartNum }}
+          </div>
+        </li>
       </ul>
     </div>
   </header>
 </template>
 
 <script>
-import LogoIcon from '@/components/icons/IconLogo.vue'
 import CartIcon from '@/components/icons/IconCart.vue'
 export default {
   name: 'vueHeader',
   components: {
-    CartIcon,
-    LogoIcon
+    CartIcon
+  },
+  props: {
+    cartNum: {
+      type: Number,
+      default: 0
+    }
   }
 }
 </script>

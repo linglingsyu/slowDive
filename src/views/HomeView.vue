@@ -67,10 +67,10 @@
     </section>
 
     <div class="bg">
-      <section class="mb-[120px]">
-        <div class="container">
+      <section class="pt-20">
+        <div class="container mb-20">
           <h2
-            class="flex items-center text-black-100 mb-20 after:h-px after:bg-black-40 after:flex-grow"
+            class="flex items-center text-black-100 after:h-px after:bg-black-40 after:flex-grow"
           >
             <span class="text-[80px]">Course</span
             ><span class="text-2xl border-x border-x-black-100 px-5 mx-5"
@@ -78,148 +78,169 @@
             >
           </h2>
         </div>
-
-        <div>
-          <div
+        <div
+          :class="[
+            index % 2 !== 0
+              ? '2xl:mr-[calc((100vw-1320px)/2)] xl:mr-[calc((100vw-1140px)/2)] lg:mr-[calc((100vw-960px)/2)]'
+              : '2xl:ml-[calc((100vw-1320px)/2)] xl:ml-[calc((100vw-1140px)/2)] lg:ml-[calc((100vw-960px)/2)]'
+          ]"
+          v-for="(item, index) in course"
+          :key="item.title"
+        >
+          <h3
+            class="text-[100px] leading-[.8] font-light"
             :class="[
-              item % 2 === 0
-                ? '2xl:mr-[calc((100vw-1320px)/2)] xl:mr-[calc((100vw-1140px)/2)] lg:mr-[calc((100vw-960px)/2)]'
-                : '2xl:ml-[calc((100vw-1320px)/2)] xl:ml-[calc((100vw-1140px)/2)] lg:ml-[calc((100vw-960px)/2)]'
+              index === 0
+                ? 'bg-clip-text text-transparent bg2'
+                : 'text-[#cef2fa]',
+              index % 2 !== 0
+                ? '2xl:ml-[calc((100vw-1320px)/2)] xl:ml-[calc((100vw-1140px)/2)] lg:ml-[calc((100vw-960px)/2)]'
+                : ''
             ]"
-            v-for="(item, index) in course"
-            :key="item.title"
           >
-            <h3
-              class="text-[150px] leading-[.8] font-light"
+            {{ item.title }}
+          </h3>
+          <div
+            class="relative -mt-[110px]"
+            :class="{ '-my-[110px]': index === course.length - 1 }"
+          >
+            <img
+              class="h-[70vh] w-full object-cover"
               :class="[
-                index !== 0
-                  ? 'bg-clip-text text-transparent bg2'
-                  : 'text-[#cef2fa]',
-                item % 2 === 0
-                  ? '2xl:ml-[calc((100vw-1320px)/2)] xl:ml-[calc((100vw-1140px)/2)] lg:ml-[calc((100vw-960px)/2)]'
-                  : ''
+                index % 2 !== 0 ? 'rounded-tr-[100px]' : 'rounded-tl-[100px]'
+              ]"
+              :src="item.image"
+              alt="{{ item.image}}"
+            />
+            <div
+              class="w-9/12 bg-white py-10 px-[110px] -translate-y-1/2"
+              :class="[
+                index % 2 !== 0
+                  ? 'rounded-tl-[50px] ml-auto'
+                  : 'rounded-tr-[50px]'
               ]"
             >
-              {{ item.title }}
-            </h3>
-            <div>
-              <img
-                class="h-[650px] w-full object-cover"
-                :class="[
-                  item % 2 === 0 ? 'rounded-tr-[100px]' : 'rounded-tl-[100px]'
-                ]"
-                :src="item.image"
-                alt="{{ item.image}}"
-              />
-              <div
-                class="w-9/12 bg-white py-10 px-[110px] -translate-y-1/2"
-                :class="[
-                  item % 2 === 0
-                    ? 'rounded-tl-[50px] ml-auto'
-                    : 'rounded-tr-[50px]'
-                ]"
-              >
-                <div
-                  class="text-lg text-danger mb-5"
-                  v-if="item.required.length"
-                >
-                  {{ item.required }}
-                </div>
-                <div class="text-xl text-blue-40">{{ item.subtitle }}</div>
-                <div class="text-4xl font-Roboto my-5">
-                  {{ item.name }}
-                </div>
-                <div class="flex items-start justify-between">
-                  <p class="w-[416px] text-lg text-black-60 leading-[34px]">
-                    {{ item.desc }}
-                  </p>
-                  <linkButton url="#" class="justify-between w-[220px]">
-                    <span>了解更多</span>
-                    <span><ArrowIcon></ArrowIcon></span>
-                  </linkButton>
-                  <vButton class="justify-center">
-                    <CartIcon fillColor="#62D5EE"></CartIcon>
-                  </vButton>
-                </div>
+              <div class="text-lg text-danger mb-5" v-if="item.required.length">
+                {{ item.required }}
+              </div>
+              <div class="text-xl text-blue-40">{{ item.subtitle }}</div>
+              <div class="text-4xl font-Roboto my-5">
+                {{ item.name }}
+              </div>
+              <div class="flex items-start justify-between">
+                <p class="w-[416px] text-lg text-black-60 leading-[34px]">
+                  {{ item.desc }}
+                </p>
+                <linkButton url="#" class="justify-between w-[220px]">
+                  <span>了解更多</span>
+                  <span><ArrowIcon></ArrowIcon></span>
+                </linkButton>
+                <vButton class="justify-center">
+                  <CartIcon fillColor="#62D5EE"></CartIcon>
+                </vButton>
               </div>
             </div>
           </div>
         </div>
-      </section>
-
-      <section class="container mt-[120px] pb-20">
-        <h2
-          class="flex items-center text-black-100 mb-[120px] after:h-px after:bg-black-40 after:flex-grow"
-        >
-          <span class="text-[80px]">Explore</span
-          ><span class="text-2xl border-x border-x-black-100 px-5 mx-5"
-            >探索海洋</span
+        <div class="relative w-full h-20 flex justify-center items-center">
+          <a
+            class="btn btn-primary px-20 btn-xl text-xl h-20 translate-y-1/2"
+            href="#"
+            >學習更多課程</a
           >
-        </h2>
-        <div class="flex flex-wrap -mx-3 gap-y-20">
-          <div class="basis-4/12 px-3" v-for="item in 7" :key="item">
-            <div>
-              <img
-                class="h-[380px] object-cover"
-                src="@/assets/images/play01.jpg"
-                alt="play01.jpg"
-              />
-              <div
-                class="font-noto flex justify-between items-center mt-3 mb-5"
-              >
-                <span class="text-black-60">2023.01.01</span>
-                <span class="text-danger">還剩 3 個名額</span>
-              </div>
-              <a href="#">
-                <div class="flex justify-between items-center">
-                  <h3 class="text-3xl">東北角一日放呆</h3>
-                  <ArrowIcon
-                    class="w-[22px] h-[22px]"
-                    fillColor="#121212"
-                  ></ArrowIcon>
-                </div>
-              </a>
-            </div>
-          </div>
         </div>
-        <a
-          href="#"
-          class="block text-center font-noto text-2xl py-10 text-blue-60"
-          ><span class="shadow-[0_1px_0_0_#62D5EE]">Read More</span></a
-        >
-      </section>
-      <section class="container pb-[120px]">
-        <h2
-          class="relative flex items-center text-black-100 mb-[120px] after:h-px after:bg-black-40 after:flex-grow"
-        >
-          <div class="text-[80px]">QA</div>
-          <div class="text-2xl border-x border-x-black-100 px-5 mx-5">
-            常見問題
-          </div>
-        </h2>
-
-        <ul>
-          <li class="border-b border-black-40">
-            <label
-              class="flex justify-between items-center py-10 cursor-pointer"
-            >
-              <input type="checkbox" class="" />
-              <h3 class="text-3xl">不會游泳可以潛水嗎？</h3>
-              <ArrowIcon class="w-[30px] h-[30px] rotate-90"></ArrowIcon>
-            </label>
-            <p class="py-10 text-lg leading-[34px]">
-              對水肺潛水來說，學員的游泳能力跟學習潛水的能力基本上是沒有直接關係的，水肺潛水是透過水肺裝備讓你能在水下呼吸氣瓶裡的空氣，所以你不需要擔心自己沒辦法換氣，唯一跟潛水有關聯的部分就是，對水的熟悉度。
-              對平時不常接觸水域活動的學員來說，是可以夠過較長的適應期來改善自己心理上的不適感
-            </p>
-          </li>
-        </ul>
-        <a
-          href="#"
-          class="block text-center font-noto text-2xl py-10 text-blue-60"
-          ><span class="shadow-[0_1px_0_0_#62D5EE]">Read More</span></a
-        >
       </section>
     </div>
+    <section class="container mt-[120px] py-20">
+      <h2
+        class="flex flex-wrap items-center text-black-100 mb-10 lg:mb-15 after:h-px after:bg-black-40 after:flex-grow"
+      >
+        <span class="text-5xl lg:text-[80px]">Fun Dive</span
+        ><span class="text-2xl border-x border-x-black-100 px-5 mx-5"
+          >探索海洋</span
+        >
+      </h2>
+      <div class="flex justify-center flex-wrap lg:-mx-3 gap-y-10 mb-8">
+        <div
+          class="basis-full lg:basis-4/12 px-3"
+          v-for="item in tour"
+          :key="item"
+        >
+          <div class="card lg:w-96 bg-white shadow-xl">
+            <figure>
+              <img
+                class="w-full h-[256px] object-cover"
+                :src="item.image"
+                alt="tours"
+              />
+            </figure>
+            <div class="card-body">
+              <div class="flex gap-1 mb-4">
+                <div
+                  class="badge-md badge-ghost badge"
+                  v-for="(tag, idx) in item.tags"
+                  :key="'tag' + idx"
+                >
+                  {{ tag }}
+                </div>
+              </div>
+              <p class="font-Roboto">
+                {{ item.sdate }}
+                <span v-if="item.edate.length">~ {{ item.edate }}</span>
+              </p>
+              <h2 class="card-title">
+                {{ item.title }}
+              </h2>
+              <div class="flex items-center justify-between">
+                <div
+                  class="badge bg-[#dd6969] border-0 text-white text-sm font-Roboto"
+                >
+                  還有 {{ item.quota }} 名額 / 共 {{ item.total }} 人
+                </div>
+                <Countdown></Countdown>
+              </div>
+              <div class="card-actions justify-end">
+                <button class="btn btn-primary btn-outline">我要報名</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a
+        href="#"
+        class="block text-center font-noto text-2xl py-10 text-blue-60"
+        ><span class="shadow-[0_1px_0_0_#62D5EE]">Read More</span></a
+      >
+    </section>
+    <section class="container pb-[120px] hidden">
+      <h2
+        class="relative flex items-center text-black-100 mb-[120px] after:h-px after:bg-black-40 after:flex-grow"
+      >
+        <div class="text-[80px]">QA</div>
+        <div class="text-2xl border-x border-x-black-100 px-5 mx-5">
+          常見問題
+        </div>
+      </h2>
+
+      <ul>
+        <li class="border-b border-black-40">
+          <label class="flex justify-between items-center py-10 cursor-pointer">
+            <input type="checkbox" class="" />
+            <h3 class="text-3xl">不會游泳可以潛水嗎？</h3>
+            <ArrowIcon class="w-[30px] h-[30px] rotate-90"></ArrowIcon>
+          </label>
+          <p class="py-10 text-lg leading-[34px]">
+            對水肺潛水來說，學員的游泳能力跟學習潛水的能力基本上是沒有直接關係的，水肺潛水是透過水肺裝備讓你能在水下呼吸氣瓶裡的空氣，所以你不需要擔心自己沒辦法換氣，唯一跟潛水有關聯的部分就是，對水的熟悉度。
+            對平時不常接觸水域活動的學員來說，是可以夠過較長的適應期來改善自己心理上的不適感
+          </p>
+        </li>
+      </ul>
+      <a
+        href="#"
+        class="block text-center font-noto text-2xl py-10 text-blue-60"
+        ><span class="shadow-[0_1px_0_0_#62D5EE]">Read More</span></a
+      >
+    </section>
   </main>
 </template>
 
@@ -228,6 +249,7 @@ import ArrowIcon from '@/components/icons/IconArrow.vue'
 import CartIcon from '@/components/icons/IconCart.vue'
 import vButton from '@/components/Button.vue'
 import linkButton from '@/components/linkButton.vue'
+import Countdown from '@/components/Countdown.vue'
 export default {
   data() {
     return {
@@ -238,7 +260,7 @@ export default {
           required: '',
           subtitle: '通往探索水底世界的門票',
           name: 'PADI OW 初階開放水域潛水員課程',
-          image: './src/assets/images/course01.jpg'
+          image: './src/assets/images/course001.jpg'
         },
         {
           title: 'Advanced',
@@ -257,14 +279,72 @@ export default {
           image: './src/assets/images/course03.jpg'
         }
       ],
+      tour: [
+        {
+          title: '台北東北角龍洞灣',
+          quota: 3,
+          total: 6,
+          sdate: '2023.01.01',
+          edate: '',
+          image: './src/assets/images/play03.jpg',
+          tags: ['歡迎體驗']
+        },
+        {
+          title: '小琉球2天1夜',
+          quota: 2,
+          total: 8,
+          sdate: '2023.03.10',
+          edate: '2023.03.11',
+          image: './src/assets/images/play01.jpg',
+          tags: ['ow', '船潛', '夜潛']
+        },
+        {
+          title: '蘭嶼3天2夜',
+          quota: 2,
+          total: 8,
+          sdate: '2023.06.10',
+          edate: '2023.06.12',
+          image: './src/assets/images/play02.png',
+          tags: ['ow', '船潛', '高氧']
+        },
+        {
+          title: '帛琉·藍洞5天4夜',
+          quota: 4,
+          total: 12,
+          sdate: '2023.10.10',
+          edate: '2023.10.14',
+          image: './src/assets/images/play04.webp',
+          tags: ['Aow', '船潛', '夜潛', '晨潛']
+        },
+        {
+          title: '菲律賓·薄荷島6天5夜',
+          quota: 6,
+          total: 12,
+          sdate: '2023.08.22',
+          edate: '2023.08.27',
+          image: './src/assets/images/play05.jpg',
+          tags: ['Aow', '高氧', '船潛', '夜潛']
+        },
+        {
+          title: '日本·沖繩4天3夜',
+          quota: 3,
+          total: 8,
+          sdate: '2023.05.10',
+          edate: '2023.05.14',
+          image: './src/assets/images/play06.jpg',
+          tags: ['歡迎體驗', 'ow', '船潛']
+        }
+      ]
     }
   },
   components: {
     vButton,
     ArrowIcon,
     CartIcon,
-    linkButton
-  }
+    linkButton,
+    Countdown
+  },
+  mounted() {}
 }
 </script>
 

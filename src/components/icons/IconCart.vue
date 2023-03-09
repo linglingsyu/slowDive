@@ -11,11 +11,6 @@
       :fill="fillColor"
     />
   </svg>
-  <div
-    class="w-4 h-4 bg-white text-blue-40 text-[10px] font-['Roboto'] text-center absolute rounded-full right-0 top-0 -translate-y-1"
-  >
-    {{ cartNum }}
-  </div>
 </template>
 
 <script>
@@ -23,12 +18,8 @@ export default {
   props: {
     fillColor: {
       // default: '#62D5EE',
-      default: "#ffffff",
-    },
-    cartNum: {
-      type: Number,
-      default: 0,
-    },
-  },
-};
+      default: '#ffffff'
+    }
+  }
+}
 </script>
