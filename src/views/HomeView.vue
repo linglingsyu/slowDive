@@ -37,7 +37,7 @@
           expand_more
         </span>
       </div>
-      <section class="container ">
+      <section class="container">
         <div
           class="absolute bottom-1/4 left-1/3 -translate-x-1/2 translate-y-1/2 p-6 w-1/2 bg-white rounded-lg rounded-tr-[100px]"
         >
@@ -207,7 +207,7 @@
         ><span class="shadow-[0_1px_0_0_#62D5EE]">Read More</span></a
       >
     </section>
-    <section class="container pb-[120px] ">
+    <section class="container pb-[120px]">
       <h2
         class="relative flex items-center text-black-100 mb-[120px] after:h-px after:bg-black-40 after:flex-grow"
       >
@@ -245,6 +245,10 @@ import CartIcon from '@/components/icons/IconCart.vue'
 import vButton from '@/components/Button.vue'
 import linkButton from '@/components/linkButton.vue'
 import Countdown from '@/components/Countdown.vue'
+
+import course01 from '@/assets/images/course01.jpg'
+import course02 from '@/assets/images/course001.jpg'
+import course03 from '@/assets/images/course03.jpg'
 export default {
   data() {
     return {
@@ -255,7 +259,7 @@ export default {
           required: '',
           subtitle: '通往探索水底世界的門票',
           name: 'PADI OW 初階開放水域潛水員課程',
-          image: './src/assets/images/course01.jpg'
+          image: course01
         },
         {
           title: 'Advanced',
@@ -263,7 +267,7 @@ export default {
           required: '需有ow證照',
           subtitle: '開啟水底世界的新大門',
           name: 'PADI AOW 進階開放水域潛水員課程',
-          image: './src/assets/images/course001.jpg'
+          image: course02
         },
         {
           title: 'Enriched Air Diver',
@@ -271,7 +275,7 @@ export default {
           required: '需有ow證照',
           subtitle: '延長免減壓時間的秘密',
           name: 'PADI AOW 進階開放水域潛水員課程',
-          image: './src/assets/images/course03.jpg'
+          image: course03
         }
       ],
       tour: [
