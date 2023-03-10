@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full fixed top-0 left-0 right-0 text-white z-50"
+    class="w-full fixed top-0 left-0 right-0 text-white z-50 bg-[#004FA2]"
     :class="{
       hidden: !showNavbar,
       'bg-[#5ca4cf] shadow-xl shadow-[#cccccc]': !isTop

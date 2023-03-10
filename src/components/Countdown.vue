@@ -40,9 +40,9 @@ export default {
       const countDownDate = new Date('March 9, 2023 23:28:00').getTime()
 
       const now = new Date().getTime()
+      if (countDownDate < now) return false
       // Find the distance between now and the count down date
       const distance = countDownDate - now
-
       this.distance = distance
       // Time calculations for days, hours, minutes and seconds
       this.days = Math.floor(distance / (1000 * 60 * 60 * 24))
@@ -55,6 +55,10 @@ export default {
       // If the count down is finished, write some text
       if (distance < 1000) {
         clearInterval(this.timer)
+        this.days = 0
+        this.hours = 0
+        this.minutes = 0
+        this.seconds = 0
       }
     }
   },
@@ -62,8 +66,12 @@ export default {
     distance: {
       handler(value) {
         console.log(value)
-        if (value < 1000) {
+        if (value < 1000 || value < 0) {
           clearInterval(this.timer)
+          this.days = 0
+          this.hours = 0
+          this.minutes = 0
+          this.seconds = 0
         } else {
           // setInterval(this.countdown, 1000)
           this.countdown()

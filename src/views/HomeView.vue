@@ -1,11 +1,12 @@
 <template>
   <main>
+    <!-- https://www.figma.com/file/UngNE2UNvSUyA32AjKEHXx/Untitled?node-id=63%3A593&t=sMVALcuLzBEOs7kN-0 -->
     <section class="h-screen relative overflow-hidden">
       <div class="w-full h-1/2 relative">
         <div
           v-for="item in 3"
           :key="item"
-          class="bg-[#38bbf8] w-[200vw] h-[205vw] opacity-30 absolute top-[-75vw] left-1/2 -ml-[100vw] -mt-[95vw] rounded-[43%] animate-[rotate_9000ms_linear_infinite] [&:nth-child(1)]:animate-[rotate_12000ms_linear_infinite] [&:nth-child(2)]:animate-[rotate_15000ms_linear_infinite] [&:nth-child(2)]:opacity-10 &nth-child(2):bg-[#a7a6a6]"
+          class="bg-[#00aeff] w-[200vw] h-[205vw] opacity-30 absolute top-[-75vw] left-1/2 -ml-[100vw] -mt-[95vw] rounded-[43%] animate-[rotate_9000ms_linear_infinite] [&:nth-child(1)]:animate-[rotate_12000ms_linear_infinite] [&:nth-child(1)]:bg-[#98d9f7] [&:nth-child(2)]:animate-[rotate_15000ms_linear_infinite] [&:nth-child(2)]:opacity-10 [&:nth-child(2)]:bg-[#a7a6a6]"
         ></div>
         <!-- <div class="wave"></div>
         <div class="wave"></div> -->
@@ -164,12 +165,12 @@
           <div class="card lg:w-96 bg-white shadow-xl">
             <figure>
               <img
-                class="w-full h-[256px] object-cover"
+                class="w-full h-[200px] object-cover"
                 :src="item.image"
                 alt="tours"
               />
             </figure>
-            <div class="card-body">
+            <div class="card-body py-4">
               <div class="flex gap-1 mb-4">
                 <div
                   class="badge-md badge-ghost badge"
@@ -207,34 +208,63 @@
         ><span class="shadow-[0_1px_0_0_#62D5EE]">Read More</span></a
       >
     </section>
-    <section class="container pb-[120px]">
-      <h2
-        class="relative flex items-center text-black-100 mb-[120px] after:h-px after:bg-black-40 after:flex-grow"
-      >
-        <div class="text-[80px]">QA</div>
-        <div class="text-2xl border-x border-x-black-100 px-5 mx-5">
-          常見問題
+    <section
+      class="pt-15 h-screen bg-[url('./src/assets/bg.svg')] bg-no-repeat bg-bottom bg-white"
+    >
+      <div class="container">
+        <!-- <h2
+          class="relative flex items-center text-black-100 mb-15 after:h-px after:bg-black-40 after:flex-grow"
+        >
+          <div class="text-[80px]">QA</div>
+          <div class="text-2xl border-x border-x-black-100 px-5 mx-5">
+            常見問題
+          </div>
+        </h2> -->
+        <div class="text-center">
+          <h2 class="text-blue-100 text-4xl">還有有任何疑問嗎？</h2>
+          <button
+            type="button"
+            class="mt-10 my-20 btn btn-primary w-1/2 text-xl h-20"
+          >
+            <span class="material-icons-outlined text-xl mr-4"> email </span>
+            歡迎與我們聯絡！
+          </button>
         </div>
-      </h2>
+        <ul class="">
+          <li
+            v-for="i in 8"
+            :key="i"
+            tabindex="0"
+            class="collapse collapse-plus border border-base-300 bg-base-100 rounded-box mb-4"
+          >
+            <div class="collapse-title text-xl font-medium">
+              Focus me to see content
+            </div>
+            <div class="collapse-content">
+              <p>
+                tabindex="0" attribute is necessary to make the div focusable
+              </p>
+            </div>
+          </li>
 
-      <ul>
-        <li class="border-b border-black-40">
-          <label class="flex justify-between items-center py-10 cursor-pointer">
-            <input type="checkbox" class="" />
+          <!-- <li class="border-b border-black-40">
+          <input id="q1" type="checkbox" class="peer" />
+          <label
+            for="q1"
+            class="flex justify-between items-center py-10 cursor-pointer transition-all"
+          >
             <h3 class="text-3xl">不會游泳可以潛水嗎？</h3>
             <ArrowIcon class="w-[30px] h-[30px] rotate-90"></ArrowIcon>
           </label>
-          <p class="py-10 text-lg leading-[34px]">
+          <div
+            class="text-lg py-10 transition-all opacity-0 peer-checked:opacity-100"
+          >
             對水肺潛水來說，學員的游泳能力跟學習潛水的能力基本上是沒有直接關係的，水肺潛水是透過水肺裝備讓你能在水下呼吸氣瓶裡的空氣，所以你不需要擔心自己沒辦法換氣，唯一跟潛水有關聯的部分就是，對水的熟悉度。
             對平時不常接觸水域活動的學員來說，是可以夠過較長的適應期來改善自己心理上的不適感
-          </p>
-        </li>
-      </ul>
-      <a
-        href="#"
-        class="block text-center font-noto text-2xl py-10 text-blue-60"
-        ><span class="shadow-[0_1px_0_0_#62D5EE]">Read More</span></a
-      >
+          </div>
+        </li> -->
+        </ul>
+      </div>
     </section>
   </main>
 </template>
@@ -358,6 +388,7 @@ export default {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
