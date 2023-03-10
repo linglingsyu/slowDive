@@ -10,10 +10,8 @@
         ></div>
         <!-- <div class="wave"></div>
         <div class="wave"></div> -->
-        <div
-          class="text-white text-[50px] absolute top-1/2 left-1/2 -translate-x-1/2"
-        >
-          <h1 class="tracking-widest">
+        <div class="flex text-white text-[50px] absolute top-1/2 left-1/2 -translate-x-1/2 z-20">
+          <h1 class="relative tracking-widest">
             <!-- <p
               class="text-center mb-10 drop-shadow-[0_1px_2px_rgba(0,0,0,0.1)] text-[3vw] tracking-[2px] uppercase"
             >
@@ -26,15 +24,16 @@
           </h1>
         </div>
       </div>
-      <div class="text-center text-white absolute left-1/2 bottom-1/4">
-        <div
-          class="animate-[scrollText_1.2s_linear_infinite] text-sm -mb-4 tracking-widest"
-        >
+      <img
+        class="relative -top-1/3 right-0 -translate-x-2/3 z-10 w-[350px] h-[350px] object-cover clip float-right opacity-90"
+        src="@/assets/divemaster_sunset.jpg"
+        alt=""
+      />
+      <div class="clear-both text-center text-white absolute left-1/2 bottom-1/4">
+        <div class="animate-[scrollText_1.2s_linear_infinite] text-sm -mb-4 tracking-widest">
           scroll
         </div>
-        <span
-          class="material-icons-outlined text-5xl animate-[scroll_1s_linear_infinite]"
-        >
+        <span class="material-icons-outlined text-5xl animate-[scroll_1s_linear_infinite]">
           expand_more
         </span>
       </div>
@@ -42,14 +41,17 @@
         <div
           class="absolute bottom-1/4 left-1/3 -translate-x-1/2 translate-y-1/2 p-6 w-1/2 bg-white rounded-lg rounded-tr-[100px]"
         >
-          <h2 class="text-3xl text-blue-40">News</h2>
+          <h2 class="text-3xl text-main">News</h2>
           <ul class="">
             <li
               class="font-Roboto border-b border-b-black-30"
               v-for="item in 3"
               :key="item"
             >
-              <a href="#" class="flex items-center h-full py-5">
+              <a
+                href="#"
+                class="flex items-center h-full py-5"
+              >
                 <div class="w-[196px] text-lg text-black-60">2023.01.01</div>
                 <div class="flex-grow text-lg text-black">
                   菲律賓宿霧薄荷島潛水考證行程開始嘍
@@ -66,17 +68,86 @@
         </div>
       </section>
     </section>
-
+    <section class="py-20 bg-white">
+      <div class="container">
+        <!-- <h2
+        class="flex flex-wrap items-center text-black-100 mb-10 lg:mb-15 after:h-px after:bg-black-40 after:flex-grow"
+      >
+        <span class="text-5xl lg:text-[80px]">Fun Dive</span
+        ><span class="text-2xl border-x border-x-black-100 px-5 mx-5"
+          >探索海洋</span
+        >
+      </h2> -->
+        <h2
+          class="text-center text-4xl mb-15 text-black-80"
+          @click=""
+        >
+          讓我們為您打造一次難忘的潛水之旅
+        </h2>
+        <div class="flex justify-center flex-wrap lg:-mx-3 gap-y-10 mb-8">
+          <div
+            class="basis-full lg:basis-4/12 px-3"
+            v-for="item in tour"
+            :key="item"
+            @mousemove="handleMouseMove"
+            @mouseenter="handleMouseEnter"
+            @mouseleave="handleMouseLeave"
+            ref="card"
+          >
+            <div
+              class="card lg:w-96 bg-white shadow-xl"
+              :style="cardStyle"
+            >
+              <figure>
+                <img
+                  class="w-full h-[200px]"
+                  :style="cardBgTransform"
+                  :src="item.image"
+                  alt="tours"
+                />
+              </figure>
+              <div class="card-body py-4">
+                <div class="flex gap-1 mb-4">
+                  <div
+                    class="badge-md badge-ghost badge"
+                    v-for="(tag, idx) in item.tags"
+                    :key="'tag' + idx"
+                  >
+                    {{ tag }}
+                  </div>
+                </div>
+                <p class="font-Roboto">
+                  {{ item.sdate }}
+                  <span v-if="item.edate.length">~ {{ item.edate }}</span>
+                </p>
+                <h2 class="card-title">
+                  {{ item.title }}
+                </h2>
+                <div class="flex items-center justify-between">
+                  <div class="badge bg-[#dd6969] border-0 text-white text-sm font-Roboto">
+                    還有 {{ item.quota }} 名額 / 共 {{ item.total }} 人
+                  </div>
+                  <Countdown></Countdown>
+                </div>
+                <div class="card-actions justify-end">
+                  <button class="btn btn-primary btn-outline">我要報名</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a
+          href="#"
+          class="block text-center font-noto text-2xl py-10 text-blue-60"
+        ><span class="shadow-[0_1px_0_0_#62D5EE]">探索更多旅程</span></a>
+      </div>
+    </section>
     <div class="bg">
       <section class="pt-20">
         <div class="container">
-          <h2
-            class="flex items-center text-black-100 after:h-px after:bg-black-40 after:flex-grow"
-          >
-            <span class="text-[80px]">Course</span
-            ><span class="text-2xl border-x border-x-black-100 px-5 mx-5"
-              >精選課程</span
-            >
+          <h2 class="flex items-center text-black-100 after:h-px after:bg-black-40 after:flex-grow">
+            <span class="text-[80px]">Course</span><span
+              class="text-2xl border-x border-x-black-100 px-5 mx-5">精選課程</span>
           </h2>
         </div>
         <div
@@ -116,7 +187,10 @@
                   : 'rounded-tr-[50px]'
               ]"
             >
-              <div class="text-lg text-danger mb-5" v-if="item.required.length">
+              <div
+                class="text-lg text-danger mb-5"
+                v-if="item.required.length"
+              >
                 {{ item.required }}
               </div>
               <div class="text-xl text-blue-40">{{ item.subtitle }}</div>
@@ -127,9 +201,14 @@
                 <p class="w-[416px] text-lg text-black-60 leading-[34px]">
                   {{ item.desc }}
                 </p>
-                <linkButton url="#" class="justify-between w-[220px]">
+                <linkButton
+                  url="#"
+                  class="justify-between w-[220px]"
+                >
                   <span>了解更多</span>
-                  <span><ArrowIcon></ArrowIcon></span>
+                  <span>
+                    <ArrowIcon></ArrowIcon>
+                  </span>
                 </linkButton>
                 <vButton class="justify-center">
                   <CartIcon fillColor="#62D5EE"></CartIcon>
@@ -142,75 +221,12 @@
           <a
             class="btn btn-primary px-20 btn-xl text-xl h-20 translate-y-1/2"
             href="#"
-            >學習更多課程</a
-          >
+          >學習更多課程</a>
         </div>
       </section>
     </div>
-    <section class="container mt-[120px] py-20">
-      <h2
-        class="flex flex-wrap items-center text-black-100 mb-10 lg:mb-15 after:h-px after:bg-black-40 after:flex-grow"
-      >
-        <span class="text-5xl lg:text-[80px]">Fun Dive</span
-        ><span class="text-2xl border-x border-x-black-100 px-5 mx-5"
-          >探索海洋</span
-        >
-      </h2>
-      <div class="flex justify-center flex-wrap lg:-mx-3 gap-y-10 mb-8">
-        <div
-          class="basis-full lg:basis-4/12 px-3"
-          v-for="item in tour"
-          :key="item"
-        >
-          <div class="card lg:w-96 bg-white shadow-xl">
-            <figure>
-              <img
-                class="w-full h-[200px] object-cover"
-                :src="item.image"
-                alt="tours"
-              />
-            </figure>
-            <div class="card-body py-4">
-              <div class="flex gap-1 mb-4">
-                <div
-                  class="badge-md badge-ghost badge"
-                  v-for="(tag, idx) in item.tags"
-                  :key="'tag' + idx"
-                >
-                  {{ tag }}
-                </div>
-              </div>
-              <p class="font-Roboto">
-                {{ item.sdate }}
-                <span v-if="item.edate.length">~ {{ item.edate }}</span>
-              </p>
-              <h2 class="card-title">
-                {{ item.title }}
-              </h2>
-              <div class="flex items-center justify-between">
-                <div
-                  class="badge bg-[#dd6969] border-0 text-white text-sm font-Roboto"
-                >
-                  還有 {{ item.quota }} 名額 / 共 {{ item.total }} 人
-                </div>
-                <Countdown></Countdown>
-              </div>
-              <div class="card-actions justify-end">
-                <button class="btn btn-primary btn-outline">我要報名</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a
-        href="#"
-        class="block text-center font-noto text-2xl py-10 text-blue-60"
-        ><span class="shadow-[0_1px_0_0_#62D5EE]">Read More</span></a
-      >
-    </section>
-    <section
-      class="pt-15 h-screen bg-[url('./src/assets/bg.svg')] bg-no-repeat bg-bottom bg-white"
-    >
+
+    <section class="pt-15 h-screen bg-[url('./src/assets/bg.svg')] bg-no-repeat bg-bottom bg-white">
       <div class="container">
         <!-- <h2
           class="relative flex items-center text-black-100 mb-15 after:h-px after:bg-black-40 after:flex-grow"
@@ -316,7 +332,8 @@ export default {
           sdate: '2023.01.01',
           edate: '',
           image: './src/assets/images/play03.jpg',
-          tags: ['歡迎體驗']
+          tags: ['歡迎體驗'],
+          depth: '1.00'
         },
         {
           title: '小琉球2天1夜',
@@ -325,7 +342,8 @@ export default {
           sdate: '2023.03.10',
           edate: '2023.03.11',
           image: './src/assets/images/play01.jpg',
-          tags: ['ow', '船潛', '夜潛']
+          tags: ['ow', '船潛', '夜潛'],
+          depth: '0.8'
         },
         {
           title: '蘭嶼3天2夜',
@@ -334,7 +352,8 @@ export default {
           sdate: '2023.06.10',
           edate: '2023.06.12',
           image: './src/assets/images/play02.png',
-          tags: ['ow', '船潛', '高氧']
+          tags: ['ow', '船潛', '高氧'],
+          depth: '0.6'
         },
         {
           title: '帛琉·藍洞5天4夜',
@@ -343,7 +362,8 @@ export default {
           sdate: '2023.10.10',
           edate: '2023.10.14',
           image: './src/assets/images/play04.webp',
-          tags: ['Aow', '船潛', '夜潛', '晨潛']
+          tags: ['Aow', '船潛', '夜潛', '晨潛'],
+          depth: '0.4'
         },
         {
           title: '菲律賓·薄荷島6天5夜',
@@ -352,7 +372,8 @@ export default {
           sdate: '2023.08.22',
           edate: '2023.08.27',
           image: './src/assets/images/play05.jpg',
-          tags: ['Aow', '高氧', '船潛', '夜潛']
+          tags: ['Aow', '高氧', '船潛', '夜潛'],
+          depth: '0.2'
         },
         {
           title: '日本·沖繩4天3夜',
@@ -361,9 +382,15 @@ export default {
           sdate: '2023.05.10',
           edate: '2023.05.14',
           image: './src/assets/images/play06.jpg',
-          tags: ['歡迎體驗', 'ow', '船潛']
+          tags: ['歡迎體驗', 'ow', '船潛'],
+          depth: '0.1'
         }
-      ]
+      ],
+      width: 0,
+      height: 0,
+      mouseX: 0,
+      mouseY: 0,
+      mouseLeaveDelay: null
     }
   },
   components: {
@@ -373,7 +400,48 @@ export default {
     linkButton,
     Countdown
   },
-  mounted() {}
+  mounted() {
+    this.width = this.$refs.card[0].offsetWidth
+    this.height = this.$refs.card[0].offsetHeight
+  },
+  computed: {
+    mousePX() {
+      return this.mouseX / this.width
+    },
+    mousePY() {
+      return this.mouseY / this.height
+    },
+    cardStyle() {
+      const rX = this.mousePX * 20
+      const rY = this.mousePY * -15
+      return {
+        transform: `rotateY(${rX}deg) rotateX(${rY}deg)`
+      }
+    },
+    cardBgTransform() {
+      const tX = this.mousePX * -5
+      const tY = this.mousePY * -5
+      return {
+        // transform: `translateX(${tX}px) translateY(${tY}px)`
+        transform: `translateX(${tX}px) translateY(${tY}px)`
+      }
+    }
+  },
+  methods: {
+    handleMouseMove(e) {
+      this.mouseX = e.pageX - this.$refs.card[0].offsetLeft - this.width / 2
+      this.mouseY = e.pageY - this.$refs.card[0].offsetTop - this.height / 2
+    },
+    handleMouseEnter() {
+      clearTimeout(this.mouseLeaveDelay)
+    },
+    handleMouseLeave() {
+      this.mouseLeaveDelay = setTimeout(() => {
+        this.mouseX = 0
+        this.mouseY = 0
+      }, 1000)
+    }
+  }
 }
 </script>
 

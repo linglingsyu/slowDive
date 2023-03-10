@@ -22,7 +22,7 @@
       #1688a5 45.99%,
       #202020 78.81%
     ); */
-    background: linear-gradient(to bottom, #ffffff, #78cdd1, #1e1e3c);
+    background: linear-gradient(to bottom, #ffffff 5%, #00aeff, #1e1e3c);
 
     /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4),
       0 0 10px rgba(0, 0, 0, 0.1) inset; */
@@ -33,6 +33,9 @@
       #ace4ef 0%,
       rgba(255, 255, 255, 0) 100%
     );
+  }
+  .clip{
+    clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
   }
 }
 @layer utilities {

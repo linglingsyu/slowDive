@@ -2,10 +2,14 @@
   <header class="container">
     <div class="flex justify-between">
       <ul class="flex items-center">
-        <li class="mr-10">
-          <RouterLink to="/"
-            ><img class="w-11/12" src="@/assets/logo.png" alt="logo"
-          /></RouterLink>
+        <li class="mr-10 relative h-20">
+          <RouterLink class="relative" to="/">
+            <img
+              class="translate-y-1/2 h-20"
+              src="@/assets/logo3.png"
+              alt="logo"
+            />
+          </RouterLink>
         </li>
         <li class="mx-5"><RouterLink to="/">愛潛水</RouterLink></li>
         <li class="mx-5"><RouterLink to="/">學潛水</RouterLink></li>
@@ -31,8 +35,10 @@
 
 <script>
 import CartIcon from '@/components/icons/IconCart.vue'
+
 export default {
   name: 'vueHeader',
+
   components: {
     CartIcon
   },

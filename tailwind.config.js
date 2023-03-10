@@ -42,6 +42,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        main: '#004fa2',
         'black-100': '#121212',
         'black-80': '#525252',
         'black-60': '#919191',

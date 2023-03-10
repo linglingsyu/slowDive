@@ -17,7 +17,7 @@
 export default {
   props: {
     fillColor: {
-      default: "#62D5EE",
+      default: "#00aeff",
       // default: '#ffffff',
     },
   },
