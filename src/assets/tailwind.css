@@ -16,27 +16,51 @@
 }
 @layer components {
   .bg {
-    /* background: linear-gradient(
-      to bottom,
-      rgba(128, 221, 240, 0) 13.7%,
-      #1688a5 45.99%,
-      #202020 78.81%
-    ); */
+
     background: linear-gradient(to bottom, #ffffff 5%, #00aeff, #1e1e3c);
 
-    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4),
-      0 0 10px rgba(0, 0, 0, 0.1) inset; */
+    /* background: linear-gradient(to bottom,
+		rgba(99, 167, 191, 1),
+		rgba(94, 86, 179, 1),
+		rgba(72, 139, 163, 1),
+		rgba(79, 124, 179, 1),
+		rgba(52, 115, 140, 1),
+		rgba(48, 92, 145, 1),
+		rgba(39, 82, 145, 1),
+		rgba(19, 58, 110, 1),
+		rgba(10, 50, 80, 1),
+		rgba(40, 41, 100, 1),
+		rgba(14, 52, 94, 1),
+		black); */
+
   }
+  .bg1 {
+    background: linear-gradient(
+      to bottom,
+      #ffffff 0%,
+      #87D9FF 100%
+    );
+  }
+
   .bg2 {
     background: linear-gradient(
       to bottom,
-      #ace4ef 0%,
-      rgba(255, 255, 255, 0) 100%
+      #87D9FF 0%,
+      #02A7F5 100%
+    );
+  }
+
+  .bg3 {
+    background: linear-gradient(
+      to bottom,
+      #02A7F5 0%,
+      #1E1E3C 100%
     );
   }
   .clip{
     clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
   }
+
 }
 @layer utilities {
   .vertical-lr {

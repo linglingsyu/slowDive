@@ -37,7 +37,7 @@ export default {
   methods: {
     countdown() {
       // Set the date we're counting down to
-      const countDownDate = new Date('March 9, 2023 23:28:00').getTime()
+      const countDownDate = new Date('March 11, 2023 23:28:00').getTime()
 
       const now = new Date().getTime()
       if (countDownDate < now) return false

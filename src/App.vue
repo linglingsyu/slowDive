@@ -3,10 +3,10 @@
     class="w-full fixed top-0 left-0 right-0 text-white z-50 bg-main"
     :class="{
       hidden: !showNavbar,
-      'bg-[#5ca4cf] shadow-xl shadow-[#cccccc]': !isTop
+      'bg-[#5ca4cf] shadow-xl shadow-[#cccccc]': !isTop,
     }"
   >
-    <Header id="header" class=""></Header>
+    <vHeader id="header"></vHeader>
   </div>
   <!-- <Button class="flex justify-between items-center w-[220px]">
       <span>了解更多</span>
@@ -17,9 +17,9 @@
 </template>
 
 <script>
-const OFFSET = 60
+const OFFSET = 60;
 // import HelloWorld from '@/components/HelloWorld.vue'
-import Header from '@/components/Header.vue'
+import vHeader from '@/components/Header.vue';
 // import Button from '@/components/Button.vue'
 export default {
   data() {
@@ -27,44 +27,41 @@ export default {
       showNavbar: true,
       lastScrollPosition: 0,
       scrollValue: 0,
-      isTop: true
-    }
+      isTop: true,
+    };
   },
   mounted() {
-    this.lastScrollPosition = window.pageYOffset
-    window.addEventListener('scroll', this.onScroll)
-    const viewportMeta = document.createElement('meta')
-    viewportMeta.name = 'viewport'
-    viewportMeta.content = 'width=device-width, initial-scale=1'
-    document.head.appendChild(viewportMeta)
+    this.lastScrollPosition = window.pageYOffset;
+    window.addEventListener('scroll', this.onScroll);
   },
   methods: {
     onScroll() {
       if (window.pageYOffset < 0) {
-        return
+        return false;
       }
 
       if (Math.abs(window.pageYOffset - this.lastScrollPosition) < OFFSET) {
-        return
+        return false;
       }
-      this.showNavbar = window.pageYOffset < this.lastScrollPosition
-      this.lastScrollPosition = window.pageYOffset
-      const windowTop = window.top.scrollY
+      // this.showNavbar = window.pageYOffset < this.lastScrollPosition;
+      this.showNavbar = false;
+      this.lastScrollPosition = window.pageYOffset;
+      const windowTop = window.top.scrollY;
       if (windowTop >= 200) {
-        this.isTop = false
+        this.isTop = false;
       } else {
-        this.isTop = true
+        this.isTop = true;
       }
-      console.log(this.isTop)
-    }
+      return true;
+    },
   },
   beforeUnmount() {
-    window.removeEventListener('scroll', this.onScroll)
+    window.removeEventListener('scroll', this.onScroll);
   },
   components: {
-    Header
+    vHeader,
     // Button,
-  }
-}
+  },
+};
 </script>
 <style scoped></style>
