@@ -78,7 +78,7 @@
         </div>
       </section>
     </section>
-    <section class="py-20 bg-white">
+    <section class="py-15 bg-white">
       <div class="container">
         <!-- <h2
         class="flex flex-wrap items-center text-black-100 mb-10 lg:mb-15 after:h-px after:bg-black-40 after:flex-grow"
@@ -91,53 +91,40 @@
         <h2 class="text-center text-4xl mb-15 text-black-80">
           讓我們為您打造一次難忘的潛水之旅
         </h2>
-
-        <div class="flex justify-center flex-wrap lg:-mx-3 gap-y-10 mb-8">
-          <div
-            class="basis-full lg:basis-4/12 px-3"
-            v-for="(item, index) in tour"
-            :key="'tour' + index"
+        <div class="relative">
+          <swiper
+            class="pb-4"
+            :breakpoints="breakpoints"
+            :pagination="{
+              el: '.swiper-pagination',
+              clickable: true,
+            }"
+            :modules="modules"
+            :navigation="{
+              nextEl: '.swiper-custom-button-next',
+              prevEl: '.swiper-custom-button-prev',
+            }"
+            :slides-per-view="4"
+            :space-between="16"
           >
-            <TourCard :tour="item"></TourCard>
-            <!-- <div class="card lg:w-96 bg-white shadow-xl" :style="cardStyle">
-              <figure>
-                <img
-                  class="w-full h-[200px]"
-                  :style="cardBgTransform"
-                  :src="item.image"
-                  alt="tours"
-                />
-              </figure>
-              <div class="card-body py-4">
-                <div class="flex gap-1 mb-4">
-                  <div
-                    class="badge-md badge-ghost badge"
-                    v-for="(tag, idx) in item.tags"
-                    :key="'tag' + idx"
-                  >
-                    {{ tag }}
-                  </div>
-                </div>
-                <p class="font-Roboto">
-                  {{ item.sdate }}
-                  <span v-if="item.edate.length">~ {{ item.edate }}</span>
-                </p>
-                <h2 class="card-title">
-                  {{ item.title }}
-                </h2>
-                <div class="flex items-center justify-between">
-                  <div
-                    class="badge bg-[#dd6969] border-0 text-white text-sm font-Roboto"
-                  >
-                    還有 {{ item.quota }} 名額 / 共 {{ item.total }} 人
-                  </div>
-                  <Countdown></Countdown>
-                </div>
-                <div class="card-actions justify-end">
-                  <button class="btn btn-primary btn-outline">我要報名</button>
-                </div>
-              </div>
-            </div> -->
+            <swiper-slide v-for="(item, index) in tour" :key="'tour' + index">
+              <TourCard :tour="item"></TourCard
+            ></swiper-slide>
+
+            <!-- <swiper-slide>Slide 2</swiper-slide>
+          <swiper-slide>Slide 3</swiper-slide>
+          ... -->
+          </swiper>
+          <div class="swiper-pagination md:hidden"></div>
+          <div
+            class="swiper-custom-button-prev hidden md:flex absolute left-0 top-1/4 z-20 w-12 h-12 rounded-full bg-black text-white items-center justify-center translate-y-1/2 -translate-x-7"
+          >
+            <span class="material-icons-outlined"> arrow_back_ios </span>
+          </div>
+          <div
+            class="swiper-custom-button-next hidden md:flex absolute right-0 top-1/4 z-20 w-12 h-12 rounded-full bg-black text-white items-center justify-center translate-y-1/2 translate-x-7"
+          >
+            <span class="material-icons-outlined"> arrow_forward_ios </span>
           </div>
         </div>
         <a
@@ -431,14 +418,6 @@
       class="pt-15 min-h-screen bg-[url('./src/assets/bg.svg')] bg-no-repeat bg-bottom bg-white"
     >
       <div class="container">
-        <!-- <h2
-          class="relative flex items-center text-black-100 mb-15 after:h-px after:bg-black-40 after:flex-grow"
-        >
-          <div class="text-[80px]">QA</div>
-          <div class="text-2xl border-x border-x-black-100 px-5 mx-5">
-            常見問題
-          </div>
-        </h2> -->
         <h2 class="text-4xl mb-10 text-center">常見問題</h2>
         <ul class="">
           <li
@@ -457,23 +436,6 @@
               v-html="qa.a"
             ></div>
           </li>
-
-          <!-- <li class="border-b border-black-40">
-          <input id="q1" type="checkbox" class="peer" />
-          <label
-            for="q1"
-            class="flex justify-between items-center py-10 cursor-pointer transition-all"
-          >
-            <h3 class="text-3xl">不會游泳可以潛水嗎？</h3>
-            <ArrowIcon class="w-[30px] h-[30px] rotate-90"></ArrowIcon>
-          </label>
-          <div
-            class="text-lg py-10 transition-all opacity-0 peer-checked:opacity-100"
-          >
-            對水肺潛水來說，學員的游泳能力跟學習潛水的能力基本上是沒有直接關係的，水肺潛水是透過水肺裝備讓你能在水下呼吸氣瓶裡的空氣，所以你不需要擔心自己沒辦法換氣，唯一跟潛水有關聯的部分就是，對水的熟悉度。
-            對平時不常接觸水域活動的學員來說，是可以夠過較長的適應期來改善自己心理上的不適感
-          </div>
-        </li> -->
         </ul>
       </div>
     </section>
@@ -484,6 +446,14 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import MotionPathPlugin from 'gsap/MotionPathPlugin';
+
+import { Navigation, Pagination } from 'swiper';
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from 'swiper/vue';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import ArrowIcon from '@/components/icons/IconArrow.vue';
 import CartIcon from '@/components/icons/IconCart.vue';
@@ -498,6 +468,25 @@ import course03 from '@/assets/images/course03.jpg';
 export default {
   data() {
     return {
+      modules: [Navigation, Pagination],
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+          // spaceBetween: 10,
+        },
+        771: {
+          slidesPerView: 2,
+          spaceBetween: 16,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 16,
+        },
+        1440: {
+          slidesPerView: 4,
+          spaceBetween: 16,
+        },
+      },
       course: [
         {
           title: 'Open Water',
@@ -773,6 +762,8 @@ export default {
     CartIcon,
     linkButton,
     TourCard,
+    Swiper,
+    SwiperSlide,
   },
   computed: {},
 };

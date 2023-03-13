@@ -1,6 +1,7 @@
 <template>
+  <!-- 要 fixed 嗎?! -->
   <div
-    class="w-full fixed top-0 left-0 right-0 text-white z-50 bg-main"
+    class="w-full top-0 left-0 right-0 text-white z-50 bg-main"
     :class="{
       hidden: !showNavbar,
       'bg-[#5ca4cf] shadow-xl shadow-[#cccccc]': !isTop,
@@ -32,7 +33,7 @@ export default {
   },
   mounted() {
     this.lastScrollPosition = window.pageYOffset;
-    window.addEventListener('scroll', this.onScroll);
+    // window.addEventListener('scroll', this.onScroll);
   },
   methods: {
     onScroll() {
@@ -56,7 +57,7 @@ export default {
     },
   },
   beforeUnmount() {
-    window.removeEventListener('scroll', this.onScroll);
+    // window.removeEventListener('scroll', this.onScroll);
   },
   components: {
     vHeader,

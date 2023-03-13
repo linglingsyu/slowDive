@@ -1,16 +1,16 @@
 <template>
   <!-- https://codepen.io/andymerskin/pen/XNMWvQ 視差效果 -->
-  <div
-    class="card-wrap"
-    @mousemove="handleMouseMove"
+  <!-- @mousemove="handleMouseMove"
     @mouseenter="handleMouseEnter"
-    @mouseleave="handleMouseLeave"
-    ref="card"
-    :style="cardStyle"
-  >
-    <div class="card lg:w-96 bg-white shadow-xl" :style="cardBgTransform">
+    @mouseleave="handleMouseLeave" -->
+  <div class="card-wrap" ref="card" :style="cardStyle">
+    <div class="card w-full bg-white shadow-md" :style="cardBgTransform">
       <figure>
-        <img class="w-full h-[200px]" :src="tour.image" alt="tours" />
+        <img
+          class="w-full h-[200px] object-cover"
+          :src="tour.image"
+          alt="tours"
+        />
       </figure>
       <div class="card-body py-4">
         <div class="flex gap-1 mb-4">
