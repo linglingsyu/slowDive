@@ -1,7 +1,7 @@
 <template>
   <!-- 要 fixed 嗎?! -->
   <div
-    class="w-full top-0 left-0 right-0 text-white z-50 bg-main"
+    class="hidden w-full top-0 left-0 right-0 text-white z-50 bg-main"
     :class="{
       hidden: !showNavbar,
       'bg-[#5ca4cf] shadow-xl shadow-[#cccccc]': !isTop,

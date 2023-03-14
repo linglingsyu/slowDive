@@ -1,15 +1,13 @@
 <template>
   <main>
     <!-- https://www.figma.com/file/UngNE2UNvSUyA32AjKEHXx/Untitled?node-id=63%3A593&t=sMVALcuLzBEOs7kN-0 -->
-    <section class="h-screen relative overflow-hidden">
+    <section class="h-screen relative overflow-hidden panel">
       <div class="w-full h-1/2 relative">
         <div
           v-for="item in 3"
           :key="item"
           class="bg-[#00aeff] w-[200vw] h-[205vw] opacity-30 absolute top-[-75vw] left-1/2 -ml-[100vw] -mt-[95vw] rounded-[43%] animate-[rotate_9000ms_linear_infinite] [&:nth-child(1)]:animate-[rotate_12000ms_linear_infinite] [&:nth-child(1)]:bg-[#98d9f7] [&:nth-child(2)]:animate-[rotate_15000ms_linear_infinite] [&:nth-child(2)]:opacity-10 [&:nth-child(2)]:bg-[#a7a6a6]"
         ></div>
-        <!-- <div class="wave"></div>
-        <div class="wave"></div> -->
         <div
           class="flex text-white text-[50px] absolute top-1/2 left-1/2 -translate-x-1/2 z-20"
         >
@@ -78,16 +76,9 @@
         </div>
       </section>
     </section>
-    <section class="py-15 bg-white">
+
+    <section class="h-screen py-15 panel">
       <div class="container">
-        <!-- <h2
-        class="flex flex-wrap items-center text-black-100 mb-10 lg:mb-15 after:h-px after:bg-black-40 after:flex-grow"
-      >
-        <span class="text-5xl lg:text-[80px]">Fun Dive</span
-        ><span class="text-2xl border-x border-x-black-100 px-5 mx-5"
-          >探索海洋</span
-        >
-      </h2> -->
         <h2 class="text-center text-4xl mb-15 text-black-80">
           讓我們為您打造一次難忘的潛水之旅
         </h2>
@@ -135,193 +126,194 @@
       </div>
     </section>
 
-    <section class="bg relative overflow-hidden">
-      <div class="fish-wrapper">
-        <div class="fish">
-          <div class="fish__skeleton"></div>
-          <div class="fish__inner">
-            <!--body-->
-            <div class="fish__body"></div>
-            <div class="fish__body"></div>
-            <div class="fish__body"></div>
-            <div class="fish__body"></div>
+    <div class="bg">
+      <section class="relative overflow-hidden">
+        <div class="fish-wrapper">
+          <div class="fish">
+            <div class="fish__skeleton"></div>
+            <div class="fish__inner">
+              <!--body-->
+              <div class="fish__body"></div>
+              <div class="fish__body"></div>
+              <div class="fish__body"></div>
+              <div class="fish__body"></div>
 
-            <!--head-->
-            <div class="fish__head"></div>
-            <div class="fish__head fish__head--2"></div>
-            <div class="fish__head fish__head--3"></div>
-            <div class="fish__head fish__head--4"></div>
+              <!--head-->
+              <div class="fish__head"></div>
+              <div class="fish__head fish__head--2"></div>
+              <div class="fish__head fish__head--3"></div>
+              <div class="fish__head fish__head--4"></div>
 
-            <div class="fish__tail-main"></div>
-            <div class="fish__tail-fork"></div>
+              <div class="fish__tail-main"></div>
+              <div class="fish__tail-fork"></div>
 
-            <div class="fish__fin"></div>
-            <div class="fish__fin fish__fin--2"></div>
+              <div class="fish__fin"></div>
+              <div class="fish__fin fish__fin--2"></div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="bubbles">
-        <div class="w-[20rem] h-[20rem]">
-          <div class="bubbles__bubble"></div>
-          <div class="bubbles__bubble"></div>
-          <div class="bubbles__bubble"></div>
+        <div class="bubbles">
+          <div class="w-[20rem] h-[20rem]">
+            <div class="bubbles__bubble"></div>
+            <div class="bubbles__bubble"></div>
+            <div class="bubbles__bubble"></div>
+          </div>
         </div>
-      </div>
-      <div class="rays"><div data-rays></div></div>
-      <div class="lights">
-        <div class="lights__group" data-lights="1">
-          <div class="lights__light"></div>
-          <div class="lights__light"></div>
-          <div class="lights__light"></div>
-          <div class="lights__light"></div>
-          <div class="lights__light"></div>
-          <div class="lights__light"></div>
-          <div class="lights__light"></div>
-          <div class="lights__light"></div>
+        <div class="rays"><div data-rays></div></div>
+        <div class="lights">
+          <div class="lights__group" data-lights="1">
+            <div class="lights__light"></div>
+            <div class="lights__light"></div>
+            <div class="lights__light"></div>
+            <div class="lights__light"></div>
+            <div class="lights__light"></div>
+            <div class="lights__light"></div>
+            <div class="lights__light"></div>
+            <div class="lights__light"></div>
+          </div>
         </div>
-      </div>
 
-      <!-- https://codepen.io/valerio-acerbis/pen/BaYaeRw -->
-      <div class="content">
-        <div class="course min-h-screen flex justify-center items-center">
-          <div class="course-item container relative">
-            <h2
-              class="slide font-light bg-clip-text text-transparent translate-y-1/3 translate-x-5 bg-gradient-to-b from-[#3E7586] to-[#cccccc] text-[80px]"
-            >
-              Open Water
-            </h2>
-            <div class="relative flex items-center">
-              <img
-                class="barrel w-[50vw] h-[50vh] object-cover rounded-tr-3xl rounded-tl-3xl rounded-br-3xl relative z-10"
-                src="@/assets/images/course01.jpg"
-                alt="course01.jpg"
-              />
-              <div
-                class="rounded-xl bg-white w-[30vw] h-[55vh] p-15 -translate-x-5 flex flex-col justify-between"
+        <!-- https://codepen.io/valerio-acerbis/pen/BaYaeRw -->
+        <div class="content">
+          <div class="course h-screen flex justify-center items-center panel">
+            <div class="course-item container relative">
+              <h2
+                class="slide font-light bg-clip-text text-transparent translate-y-1/3 translate-x-5 bg-gradient-to-b from-[#3E7586] to-[#cccccc] text-[80px]"
               >
-                <div>
-                  <h4 class="spring text-[#43746F] mb-5 text-lg">
-                    通往探索水底世界的門票
-                  </h4>
-                  <h3 class="text-[#656565] mb-5 text-xl">
-                    初階開放水域潛水員課程
-                  </h3>
-                  <p class="tracking-wide leading-snug text-black-60">
-                    在開闊的海域中盡情探索！參加我們的 open
-                    water課程，學習安全而有趣的潛水技巧。在專業教練的指導下，打造獨特的潛水體驗
-                  </p>
+                Open Water
+              </h2>
+              <div class="relative flex items-center">
+                <img
+                  class="barrel w-[50vw] h-[50vh] object-cover rounded-tr-3xl rounded-tl-3xl rounded-br-3xl relative z-10"
+                  src="@/assets/images/course01.jpg"
+                  alt="course01.jpg"
+                />
+                <div
+                  class="rounded-xl bg-white w-[30vw] h-[55vh] p-15 -translate-x-5 flex flex-col justify-between"
+                >
+                  <div>
+                    <h4 class="spring text-[#43746F] mb-5 text-lg">
+                      通往探索水底世界的門票
+                    </h4>
+                    <h3 class="text-[#656565] mb-5 text-xl">
+                      初階開放水域潛水員課程
+                    </h3>
+                    <p class="tracking-wide leading-snug text-black-60">
+                      在開闊的海域中盡情探索！參加我們的 open
+                      water課程，學習安全而有趣的潛水技巧。在專業教練的指導下，打造獨特的潛水體驗
+                    </p>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <button
+                      type="button"
+                      class="bg-[#5FADA5] text-white text-center rounded-lg py-5 px-10 hover:hue-rotate-15"
+                    >
+                      了解更多
+                    </button>
+                    <vButton
+                      class="justify-center shadow-[0_0_30px_0_rgba(95,173,165,.25)]"
+                    >
+                      <CartIcon fillColor="#5FADA5"></CartIcon>
+                    </vButton>
+                  </div>
                 </div>
-                <div class="flex justify-between items-center">
-                  <button
-                    type="button"
-                    class="bg-[#5FADA5] text-white text-center rounded-lg py-5 px-10 hover:hue-rotate-15"
-                  >
-                    了解更多
-                  </button>
-                  <vButton
-                    class="justify-center shadow-[0_0_30px_0_rgba(95,173,165,.25)]"
-                  >
-                    <CartIcon fillColor="#5FADA5"></CartIcon>
-                  </vButton>
+              </div>
+            </div>
+          </div>
+          <div class="course h-screen flex justify-center items-center panel">
+            <div class="course-item container relative">
+              <h2
+                class="text-end font-light bg-clip-text text-transparent translate-y-1/3 -translate-x-5 bg-gradient-to-b from-[#0066A4] to-[#D39A5C] text-[80px]"
+              >
+                Open Water
+              </h2>
+              <div class="relative flex flex-row-reverse items-center">
+                <img
+                  class="w-[50vw] h-[50vh] object-cover rounded-tr-3xl rounded-tl-3xl rounded-bl-3xl relative z-10"
+                  src="@/assets/images/course001.jpg"
+                  alt="course01.jpg"
+                />
+                <div
+                  class="rounded-xl bg-white w-[30vw] h-[55vh] p-15 translate-x-5 flex flex-col justify-between"
+                >
+                  <div>
+                    <h4 class="text-[#764F39] mb-5 text-lg">
+                      通往探索水底世界的門票
+                    </h4>
+                    <h3 class="text-[#656565] mb-5 text-xl">
+                      初階開放水域潛水員課程
+                    </h3>
+                    <p class="tracking-wide leading-snug text-black-60">
+                      在開闊的海域中盡情探索！參加我們的 open
+                      water課程，學習安全而有趣的潛水技巧。在專業教練的指導下，打造獨特的潛水體驗
+                    </p>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <button
+                      type="button"
+                      class="bg-[#8F6F4A] text-white text-center rounded-lg py-5 px-10 hover:hue-rotate-15"
+                    >
+                      了解更多
+                    </button>
+                    <vButton
+                      class="justify-center shadow-[0_0_30px_0_rgba(143,111,74,.25)]"
+                    >
+                      <CartIcon fillColor="#8F6F4A"></CartIcon>
+                    </vButton>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="course h-screen flex justify-center items-center panel">
+            <div class="course-item container relative">
+              <h2
+                class="font-light bg-clip-text text-transparent translate-y-1/3 translate-x-5 bg-gradient-to-b from-[#c6e8fa] to-[#5ca4cf] text-[80px]"
+              >
+                Enriched Air
+              </h2>
+              <div class="relative flex items-center">
+                <img
+                  class="w-[50vw] h-[50vh] object-cover rounded-tr-3xl rounded-tl-3xl rounded-br-3xl relative z-10"
+                  src="@/assets/images/course03.jpg"
+                  alt="course01.jpg"
+                />
+                <div
+                  class="rounded-xl bg-white w-[30vw] h-[55vh] p-15 -translate-x-5 flex flex-col justify-between"
+                >
+                  <div>
+                    <h4 class="text-[#2F518E] mb-5 text-lg">
+                      延長免減壓時間的秘密
+                    </h4>
+                    <h3 class="text-[#656565] mb-5 text-xl">高氧潛水員課程</h3>
+                    <p class="tracking-wide leading-snug text-black-60">
+                      用高氧空氣取代標準空氣
+                      ，可延長免減壓極限，待在水底的時間更久。
+                      使用高氧空氣潛水在世界各地已是相當普遍的趨勢。
+                    </p>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <button
+                      type="button"
+                      class="bg-[#2F518E] text-white text-center rounded-lg py-5 px-10 hover:hue-rotate-15"
+                    >
+                      了解更多
+                    </button>
+                    <vButton
+                      class="justify-center shadow-[0_0_30px_0_rgba(47,81,142,.25)]"
+                    >
+                      <CartIcon fillColor="#2F518E"></CartIcon>
+                    </vButton>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="course min-h-screen flex justify-center items-center">
-          <div class="course-item container relative">
-            <h2
-              class="text-end font-light bg-clip-text text-transparent translate-y-1/3 -translate-x-5 bg-gradient-to-b from-[#0066A4] to-[#D39A5C] text-[80px]"
-            >
-              Open Water
-            </h2>
-            <div class="relative flex flex-row-reverse items-center">
-              <img
-                class="w-[50vw] h-[50vh] object-cover rounded-tr-3xl rounded-tl-3xl rounded-bl-3xl relative z-10"
-                src="@/assets/images/course001.jpg"
-                alt="course01.jpg"
-              />
-              <div
-                class="rounded-xl bg-white w-[30vw] h-[55vh] p-15 translate-x-5 flex flex-col justify-between"
-              >
-                <div>
-                  <h4 class="text-[#764F39] mb-5 text-lg">
-                    通往探索水底世界的門票
-                  </h4>
-                  <h3 class="text-[#656565] mb-5 text-xl">
-                    初階開放水域潛水員課程
-                  </h3>
-                  <p class="tracking-wide leading-snug text-black-60">
-                    在開闊的海域中盡情探索！參加我們的 open
-                    water課程，學習安全而有趣的潛水技巧。在專業教練的指導下，打造獨特的潛水體驗
-                  </p>
-                </div>
-                <div class="flex justify-between items-center">
-                  <button
-                    type="button"
-                    class="bg-[#8F6F4A] text-white text-center rounded-lg py-5 px-10 hover:hue-rotate-15"
-                  >
-                    了解更多
-                  </button>
-                  <vButton
-                    class="justify-center shadow-[0_0_30px_0_rgba(143,111,74,.25)]"
-                  >
-                    <CartIcon fillColor="#8F6F4A"></CartIcon>
-                  </vButton>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="course min-h-screen flex justify-center items-center">
-          <div class="course-item container relative">
-            <h2
-              class="font-light bg-clip-text text-transparent translate-y-1/3 translate-x-5 bg-gradient-to-b from-[#c6e8fa] to-[#5ca4cf] text-[80px]"
-            >
-              Enriched Air
-            </h2>
-            <div class="relative flex items-center">
-              <img
-                class="w-[50vw] h-[50vh] object-cover rounded-tr-3xl rounded-tl-3xl rounded-br-3xl relative z-10"
-                src="@/assets/images/course03.jpg"
-                alt="course01.jpg"
-              />
-              <div
-                class="rounded-xl bg-white w-[30vw] h-[55vh] p-15 -translate-x-5 flex flex-col justify-between"
-              >
-                <div>
-                  <h4 class="text-[#2F518E] mb-5 text-lg">
-                    延長免減壓時間的秘密
-                  </h4>
-                  <h3 class="text-[#656565] mb-5 text-xl">高氧潛水員課程</h3>
-                  <p class="tracking-wide leading-snug text-black-60">
-                    用高氧空氣取代標準空氣
-                    ，可延長免減壓極限，待在水底的時間更久。
-                    使用高氧空氣潛水在世界各地已是相當普遍的趨勢。
-                  </p>
-                </div>
-                <div class="flex justify-between items-center">
-                  <button
-                    type="button"
-                    class="bg-[#2F518E] text-white text-center rounded-lg py-5 px-10 hover:hue-rotate-15"
-                  >
-                    了解更多
-                  </button>
-                  <vButton
-                    class="justify-center shadow-[0_0_30px_0_rgba(47,81,142,.25)]"
-                  >
-                    <CartIcon fillColor="#2F518E"></CartIcon>
-                  </vButton>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- <div class="bg">
+      <!-- <div class="bg">
       <section>
         <div class="container">
           <h2
@@ -404,48 +396,48 @@
       </section>
     </div> -->
 
-    <section class="py-20">
-      <div class="text-center container">
-        <h2 class="text-blue-100 text-4xl">還有任何疑問嗎？</h2>
-        <button type="button" class="mt-10 btn btn-primary text-xl h-15">
-          <span class="material-icons-outlined text-xl mr-4"> email </span>
-          立刻與我們聯絡！
-        </button>
-      </div>
-    </section>
+      <!-- <section class="py-20 h-screen panel">
+        <div class="text-center container">
+          <h2 class="text-blue-100 text-4xl">還有任何疑問嗎？</h2>
+          <button type="button" class="mt-10 btn btn-primary text-xl h-15">
+            <span class="material-icons-outlined text-xl mr-4"> email </span>
+            立刻與我們聯絡！
+          </button>
+        </div>
+      </section> -->
 
-    <section
-      class="pt-15 min-h-screen bg-[url('./src/assets/bg.svg')] bg-no-repeat bg-bottom bg-white"
-    >
-      <div class="container">
-        <h2 class="text-4xl mb-10 text-center">常見問題</h2>
-        <ul class="">
-          <li
-            v-for="(qa, index) in faq"
-            :key="'qa' + index"
-            tabindex="0"
-            class="collapse collapse-plus border-b border-base-300 mb-4 group"
-          >
-            <div
-              class="collapse-title text-xl font-medium text-[#656565] group-focus:bg-white"
+      <section class="pt-15 h-screen panel">
+        <div class="container">
+          <h2 class="text-4xl mb-10 text-center">常見問題</h2>
+          <ul class="">
+            <li
+              v-for="(qa, index) in faq"
+              :key="'qa' + index"
+              tabindex="0"
+              class="collapse collapse-plus border-b border-base-300 mb-4 group"
             >
-              {{ qa.q }}
-            </div>
-            <div
-              class="collapse-content text-black-60 group-focus:bg-white"
-              v-html="qa.a"
-            ></div>
-          </li>
-        </ul>
-      </div>
-    </section>
+              <div
+                class="collapse-title text-xl font-medium text-[#656565] group-focus:bg-white"
+              >
+                {{ qa.q }}
+              </div>
+              <div
+                class="collapse-content text-black-60 group-focus:bg-white"
+                v-html="qa.a"
+              ></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
   </main>
 </template>
 
 <script>
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import MotionPathPlugin from 'gsap/MotionPathPlugin';
+// import MotionPathPlugin from 'gsap/MotionPathPlugin';
+import ScrollToPlugin from 'gsap/ScrollToPlugin';
 
 import { Navigation, Pagination } from 'swiper';
 // Import Swiper Vue.js components
@@ -600,12 +592,30 @@ export default {
     };
   },
   mounted() {
-    const scene = document.getElementById('scene');
-    new Parallax(scene);
+    // const scene = document.getElementById('scene');
+    // new Parallax(scene);
 
     gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(MotionPathPlugin);
+    gsap.registerPlugin(ScrollToPlugin);
+    // gsap.registerPlugin(MotionPathPlugin);
+    ScrollTrigger.defaults({
+      markers: true,
+    });
+    const sections = gsap.utils.toArray('.panel');
+    sections.forEach((eachPanel, i) => {
+      ScrollTrigger.create({
+        trigger: eachPanel,
+        onEnter: () => this.goToSection(i),
+      });
 
+      ScrollTrigger.create({
+        trigger: eachPanel,
+        start: '20px bottom',
+        onEnterBack: () => this.goToSection(i),
+      });
+      // gsap.timeline({ paused: true });
+    });
+    // this.sectionScroll();
     // const path = [
     //   // 1
     //   { x: 800, y: 200 },
@@ -639,68 +649,68 @@ export default {
     //   };
     // });
 
-    const sections = [...document.querySelectorAll('.course')];
+    // const sections = [...document.querySelectorAll('.course')];
 
-    // const rays = document.querySelector('[data-rays]');
+    // // const rays = document.querySelector('[data-rays]');
 
-    const lights = [...document.querySelectorAll('[data-lights]')];
+    // const lights = [...document.querySelectorAll('[data-lights]')];
 
-    const lightsTl = gsap.timeline({
-      scrollTrigger: {
-        scrub: 6,
-      },
-    });
-    lightsTl.from(
-      lights[0],
-      {
-        x: window.innerWidth * -1,
-        y: window.innerHeight,
-        ease: 'power4.out',
-        duration: 80,
-      },
-      0
-    );
-    lightsTl.to(
-      lights[0],
-      {
-        x: window.innerWidth,
-        y: window.innerHeight * -1,
-        ease: 'power4.out',
-        duration: 80,
-      },
-      '-=5'
-    );
+    // const lightsTl = gsap.timeline({
+    //   scrollTrigger: {
+    //     scrub: 6,
+    //   },
+    // });
+    // lightsTl.from(
+    //   lights[0],
+    //   {
+    //     x: window.innerWidth * -1,
+    //     y: window.innerHeight,
+    //     ease: 'power4.out',
+    //     duration: 80,
+    //   },
+    //   0
+    // );
+    // lightsTl.to(
+    //   lights[0],
+    //   {
+    //     x: window.innerWidth,
+    //     y: window.innerHeight * -1,
+    //     ease: 'power4.out',
+    //     duration: 80,
+    //   },
+    //   '-=5'
+    // );
 
-    sections.forEach((section, i) => {
-      const p = section.querySelector('.course-item');
-      gsap.to(p, { opacity: 0.5 });
+    // sections.forEach((section, i) => {
+    //   const p = section.querySelector('.course-item');
+    //   gsap.to(p, { opacity: 0.5 });
 
-      ScrollTrigger.create({
-        trigger: section,
-        start: 'top top',
-        onEnter: () => this.makeBubbles(p, i),
-        onEnterBack: () => {
-          if (i <= 6) {
-            gsap.to('.bubbles', {
-              opacity: 1,
-            });
-          }
-        },
-        onLeave: () => {
-          this.hideText(p);
-          if (i == 0) {
-            gsap.to('.rays', {
-              opacity: 0,
-              y: -500,
-              duration: 8,
-              ease: 'power4.in',
-            });
-          }
-        },
-        onLeaveBack: () => this.hideText(p),
-        // onUpdate: (self) => rotateFish(self)
-      });
-    });
+    //   ScrollTrigger.create({
+    //     trigger: section,
+    //     start: 'top top',
+    //     onEnter: () => this.makeBubbles(p, i),
+    //     onEnterBack: () => {
+    //       if (i <= 6) {
+    //         gsap.to('.bubbles', {
+    //           opacity: 1,
+    //         });
+    //       }
+    //     },
+    //     onLeave: () => {
+    //       this.hideText(p);
+    //       if (i == 0) {
+    //         gsap.to('.rays', {
+    //           opacity: 0,
+    //           y: -500,
+    //           duration: 8,
+    //           ease: 'power4.in',
+    //         });
+    //       }
+    //     },
+    //     onLeaveBack: () => this.hideText(p),
+    //     // onUpdate: (self) => rotateFish(self)
+    //   });
+    // });
     // gsap.utils.toArray('.panel').forEach((panel) => {
     //   ScrollTrigger.create({
     //     trigger: panel,
@@ -754,6 +764,19 @@ export default {
     },
     hideText(p) {
       gsap.to(p, { opacity: 0, duration: 1 });
+    },
+    goToSection(i) {
+      gsap.to(window, {
+        scrollTo: {
+          y: i * innerHeight,
+          autoKill: false,
+          ease: 'Power3.easeInOut',
+        },
+        duration: 1,
+      });
+    },
+    sectionScroll() {
+      // gsap.timeline({ paused: true });
     },
   },
   components: {
