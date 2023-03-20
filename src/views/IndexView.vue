@@ -403,10 +403,10 @@
         </div>
       </section> -->
 
-    <section class="pt-15 h-screen panel">
+    <section class="pt-15 h-screen panel text-white">
       <div class="container">
         <h2 class="text-4xl mb-10 text-center">常見問題</h2>
-        <ul class="">
+        <ul class="bg-white/10 p-4">
           <li
             v-for="(qa, index) in faq"
             :key="'qa' + index"
@@ -414,12 +414,12 @@
             class="collapse collapse-plus border-b border-base-300 mb-4 group"
           >
             <div
-              class="collapse-title text-xl font-medium text-[#656565] group-focus:bg-white"
+              class="collapse-title text-xl font-medium text-white group-focus:text-black group-focus:bg-white"
             >
               {{ qa.q }}
             </div>
             <div
-              class="collapse-content text-black-60 group-focus:bg-white"
+              class="collapse-content leading-normal tracking-wider text-[#656565] group-focus:bg-white"
               v-html="qa.a"
             ></div>
           </li>
@@ -431,9 +431,9 @@
 
 <script>
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
+// import ScrollTrigger from 'gsap/ScrollTrigger';
 // import MotionPathPlugin from 'gsap/MotionPathPlugin';
-import ScrollToPlugin from 'gsap/ScrollToPlugin';
+// import ScrollToPlugin from 'gsap/ScrollToPlugin';
 
 import { Navigation, Pagination } from 'swiper';
 // Import Swiper Vue.js components
@@ -507,7 +507,7 @@ export default {
           quota: 3,
           total: 6,
           sdate: '2023.01.01',
-          edate: '',
+          edate: '2023.01.01',
           image: './src/assets/images/play03.jpg',
           tags: ['歡迎體驗'],
           depth: '1.00',
@@ -590,20 +590,18 @@ export default {
   mounted() {
     // const scene = document.getElementById('scene');
     // new Parallax(scene);
-
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.registerPlugin(ScrollToPlugin);
-    // gsap.registerPlugin(MotionPathPlugin);
-    ScrollTrigger.defaults({
-      markers: true,
-    });
+    // gsap.registerPlugin(ScrollTrigger);
+    // gsap.registerPlugin(ScrollToPlugin);
+    // // gsap.registerPlugin(MotionPathPlugin);
+    // ScrollTrigger.defaults({
+    //   markers: true,
+    // });
     // const sections = gsap.utils.toArray('.panel');
     // sections.forEach((eachPanel, i) => {
     //   ScrollTrigger.create({
     //     trigger: eachPanel,
     //     onEnter: () => this.goToSection(i),
     //   });
-
     //   ScrollTrigger.create({
     //     trigger: eachPanel,
     //     start: '20px bottom',
@@ -634,23 +632,17 @@ export default {
     //   { x: 500, y: 450 },
     //   { x: 1100, y: 500 },
     // ];
-
     // const rx = window.innerWidth < 1000 ? window.innerWidth / 1200 : 1;
     // const ry = window.innerHeight < 700 ? window.innerHeight / 1200 : 1;
-
     // const scaledPath = path.map(({ x, y }) => {
     //   return {
     //     x: x * rx,
     //     y: y * ry,
     //   };
     // });
-
     // const sections = [...document.querySelectorAll('.course')];
-
     // // const rays = document.querySelector('[data-rays]');
-
     // const lights = [...document.querySelectorAll('[data-lights]')];
-
     // const lightsTl = gsap.timeline({
     //   scrollTrigger: {
     //     scrub: 6,
@@ -676,11 +668,9 @@ export default {
     //   },
     //   '-=5'
     // );
-
     // sections.forEach((section, i) => {
     //   const p = section.querySelector('.course-item');
     //   gsap.to(p, { opacity: 0.5 });
-
     //   ScrollTrigger.create({
     //     trigger: section,
     //     start: 'top top',

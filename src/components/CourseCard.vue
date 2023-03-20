@@ -4,6 +4,7 @@
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave" -->
   <div class="card-wrap" ref="card" :style="cardStyle">
+    {{ course.id }}
     <div class="card w-full bg-white shadow-md" :style="cardBgTransform">
       <figure>
         <img
@@ -14,72 +15,26 @@
       </figure>
       <div class="card-body py-4">
         <div class="flex justify-between items-center">
-          <div class="rating rating-sm rating-half">
-            <!-- <input type="radio" name="rating-10" class="rating-hidden" /> -->
-            <input
-              type="radio"
-              name="rating-10"
-              class="bg-main mask mask-star-2 mask-half-1"
-            />
-            <input
-              type="radio"
-              name="rating-10"
-              class="bg-main mask mask-star-2 mask-half-2"
-            />
-            <input
-              type="radio"
-              name="rating-10"
-              class="bg-main mask mask-star-2 mask-half-1"
-              checked
-            />
-            <input
-              type="radio"
-              name="rating-10"
-              class="bg-main mask mask-star-2 mask-half-2"
-            />
-            <input
-              type="radio"
-              name="rating-10"
-              class="bg-main mask mask-star-2 mask-half-1"
-            />
-            <input
-              type="radio"
-              name="rating-10"
-              class="bg-main mask mask-star-2 mask-half-2"
-            />
-            <input
-              type="radio"
-              name="rating-10"
-              class="bg-main mask mask-star-2 mask-half-1"
-            />
-            <input
-              type="radio"
-              name="rating-10"
-              class="bg-main mask mask-star-2 mask-half-2"
-            />
-            <input
-              type="radio"
-              name="rating-10"
-              class="bg-main mask mask-star-2 mask-half-1"
-            />
-            <input
-              type="radio"
-              name="rating-10"
-              class="bg-main mask mask-star-2 mask-half-2"
-            />
-          </div>
-
+          <RankStar :name="'rating' + course.id"></RankStar>
+          <button class="text-[#c21e1e]" type="button">
+            <span v-if="course.isCollect" class="material-icons-outlined">
+              favorite
+            </span>
+            <span v-else class="material-icons-outlined">
+              favorite_border
+            </span>
+          </button>
+        </div>
+        <h2 class="card-title py-2">
+          {{ course.title }}
+        </h2>
+        <p class="text-sm leading-normal">{{ course.desc }}</p>
+        <div class="flex justify-between items-center font-Roboto py-4">
           <div
             class="badge bg-[#dd6969] border-0 text-white text-sm font-Roboto"
           >
             已有 {{ course.people }} 人參加
           </div>
-        </div>
-        <h2 class="card-title">
-          {{ course.title }}
-        </h2>
-        <p>{{ course.desc }}</p>
-        <div class="text-end font-Roboto">
           <div>$15,000</div>
         </div>
         <!-- <div class="card-actions justify-end">
@@ -92,6 +47,7 @@
 
 <script>
 // import Countdown from '@/components/Countdown.vue';
+import RankStar from '@/components/RankStar.vue';
 
 export default {
   props: ['course'],
@@ -99,7 +55,7 @@ export default {
   data() {
     return {};
   },
-  components: {},
+  components: { RankStar },
   methods: {},
   computed: {},
 };

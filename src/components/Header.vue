@@ -5,14 +5,16 @@
         <li class="mr-10 relative h-20">
           <RouterLink class="relative" to="/">
             <img
-              class="translate-y-1/2 h-20"
+              class="translate-y-1/2 h-20 relative z-10"
               src="@/assets/logo3.png"
               alt="logo"
             />
           </RouterLink>
         </li>
         <li class="mx-5"><RouterLink to="/">愛潛水</RouterLink></li>
-        <li class="mx-5"><RouterLink to="/">學潛水</RouterLink></li>
+        <li class="mx-5">
+          <RouterLink :to="{ name: 'course' }">學潛水</RouterLink>
+        </li>
         <li class="mx-5"><RouterLink to="/">行事曆</RouterLink></li>
         <li class="mx-5"><RouterLink to="/">常見問題</RouterLink></li>
       </ul>
@@ -34,19 +36,19 @@
 </template>
 
 <script>
-import CartIcon from '@/components/icons/IconCart.vue'
+import CartIcon from '@/components/icons/IconCart.vue';
 
 export default {
   name: 'vueHeader',
 
   components: {
-    CartIcon
+    CartIcon,
   },
   props: {
     cartNum: {
       type: Number,
-      default: 0
-    }
-  }
-}
+      default: 0,
+    },
+  },
+};
 </script>

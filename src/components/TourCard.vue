@@ -24,12 +24,12 @@
         </div>
         <p class="font-Roboto">
           {{ tour.sdate }}
-          <span v-if="tour.edate.length">~ {{ tour.edate }}</span>
+          <span v-if="tour.edate !== tour.sdate">~ {{ tour.edate }}</span>
         </p>
         <h2 class="card-title">
           {{ tour.title }}
         </h2>
-        <div class="flex tours-center justify-between">
+        <div class="flex items-center justify-between">
           <div
             class="badge bg-[#dd6969] border-0 text-white text-sm font-Roboto"
           >

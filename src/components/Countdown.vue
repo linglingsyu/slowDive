@@ -1,5 +1,5 @@
 <template>
-  <span class="countdown font-mono text-xl" ref="countdown">
+  <span class="countdown font-mono" ref="countdown">
     <span :style="`--value:${hours}`"></span>:
     <span :style="`--value: ${minutes}`"></span>:
     <span :style="`--value: ${seconds}`"></span>
@@ -16,8 +16,8 @@ export default {
       days: 0,
       hours: 0,
       minutes: 0,
-      seconds: 0
-    }
+      seconds: 0,
+    };
   },
   mounted() {
     /*
@@ -29,59 +29,59 @@ export default {
                  需要加上if判断一下，若还有定时器的话，就清除掉，所以这个就是mounted钩子的if判断的原因
     */
     if (this.timer) {
-      clearInterval(this.timer)
+      clearInterval(this.timer);
     } else {
-      this.timer = setInterval(this.countdown, 1000)
+      this.timer = setInterval(this.countdown, 1000);
     }
   },
   methods: {
     countdown() {
       // Set the date we're counting down to
-      const countDownDate = new Date('March 11, 2023 23:28:00').getTime()
+      const countDownDate = new Date('March 11, 2023 23:28:00').getTime();
 
-      const now = new Date().getTime()
-      if (countDownDate < now) return false
+      const now = new Date().getTime();
+      if (countDownDate < now) return false;
       // Find the distance between now and the count down date
-      const distance = countDownDate - now
-      this.distance = distance
+      const distance = countDownDate - now;
+      this.distance = distance;
       // Time calculations for days, hours, minutes and seconds
-      this.days = Math.floor(distance / (1000 * 60 * 60 * 24))
+      this.days = Math.floor(distance / (1000 * 60 * 60 * 24));
       this.hours = Math.floor(
         (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      )
-      this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
-      this.seconds = Math.floor((distance % (1000 * 60)) / 1000)
+      );
+      this.minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      this.seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       // If the count down is finished, write some text
       if (distance < 1000) {
-        clearInterval(this.timer)
-        this.days = 0
-        this.hours = 0
-        this.minutes = 0
-        this.seconds = 0
+        clearInterval(this.timer);
+        this.days = 0;
+        this.hours = 0;
+        this.minutes = 0;
+        this.seconds = 0;
       }
-    }
+    },
   },
   watch: {
     distance: {
       handler(value) {
-        console.log(value)
+        console.log(value);
         if (value < 1000 || value < 0) {
-          clearInterval(this.timer)
-          this.days = 0
-          this.hours = 0
-          this.minutes = 0
-          this.seconds = 0
+          clearInterval(this.timer);
+          this.days = 0;
+          this.hours = 0;
+          this.minutes = 0;
+          this.seconds = 0;
         } else {
           // setInterval(this.countdown, 1000)
-          this.countdown()
+          this.countdown();
         }
       },
-      immediate: true
-    }
+      immediate: true,
+    },
   },
   beforeUnmount() {
     // clearInterval(this.timer)
-  }
-}
+  },
+};
 </script>
